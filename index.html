@@ -17,8 +17,6 @@
   --r:8px;--rl:12px;
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif;background:var(--bg3);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
-
-/* NAV */
 nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky;top:0;z-index:100}
 .nav-inner{max-width:1120px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -32,29 +30,20 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .btn-nav:hover{background:var(--bg2)}
 .btn-nav.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
 .btn-nav.primary:hover{opacity:.85}
-
-/* LANG TOGGLE */
 .lang-toggle{display:flex;background:var(--bg2);border-radius:20px;padding:3px;border:0.5px solid var(--border2);gap:2px}
 .lang-btn{font-size:11px;padding:4px 12px;border-radius:16px;border:none;background:transparent;cursor:pointer;font-family:inherit;color:var(--text2);transition:all .15s;font-weight:500}
 .lang-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.1)}
-
-/* PAGE */
+.fx-note{font-size:10px;color:var(--text3);padding:2px 8px;border-radius:20px;background:var(--bg2);border:0.5px solid var(--border);white-space:nowrap}
 .page{max-width:1120px;margin:0 auto;padding:1.5rem}
-
-/* METRICS */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
 .mcard{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:16px 18px}
 .mcard-label{font-size:11px;color:var(--text2);margin-bottom:4px}
 .mcard-value{font-size:24px;font-weight:600;letter-spacing:-.5px}
 .mcard-delta{font-size:11px;color:var(--teal-text);margin-top:3px}
-
-/* TABS */
 .tabs{display:flex;gap:2px;border-bottom:0.5px solid var(--border);margin-bottom:1.5rem}
 .tab{font-size:13px;padding:9px 18px;border:none;background:none;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-0.5px;transition:color .12s;font-family:inherit}
 .tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:500}
 .tab:hover:not(.active){color:var(--text)}
-
-/* THEME TABS */
 .theme-tabs{display:flex;gap:10px;margin-bottom:1.25rem}
 .theme-btn{flex:1;padding:12px 16px;border-radius:var(--rl);border:0.5px solid var(--border2);background:var(--bg);cursor:pointer;text-align:left;transition:all .15s;font-family:inherit}
 .theme-btn.ag{background:var(--green-bg);border-color:var(--green-border)}
@@ -63,8 +52,6 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .theme-label{font-size:13px;font-weight:600}
 .theme-label.g{color:var(--green-text)}.theme-label.b{color:var(--blue-text)}
 .theme-count{font-size:11px;color:var(--text2);margin-top:2px}
-
-/* PRIORITY ROW */
 .section-row{display:flex;align-items:center;gap:8px;margin-bottom:1rem}
 .section-title{font-size:12px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:.5px}
 .priority-key{display:flex;gap:6px;margin-left:auto}
@@ -72,8 +59,6 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .pk-s{background:var(--teal-bg);color:var(--teal-text)}
 .pk-a{background:var(--blue-bg);color:var(--blue-text)}
 .pk-b{background:var(--amber-bg);color:var(--amber-text)}
-
-/* CARDS */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;margin-bottom:1.5rem}
 .card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:18px;transition:border-color .15s,box-shadow .15s}
 .card:hover{border-color:var(--border2);box-shadow:0 2px 12px rgba(0,0,0,.06)}
@@ -99,22 +84,16 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .btn-card:hover{background:var(--bg2)}
 .btn-card.dark{background:var(--text);color:var(--bg);border-color:var(--text)}
 .btn-card.dark:hover{opacity:.85}
-
-/* MATRIX */
 .matrix{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:18px;margin-bottom:1.25rem;overflow-x:auto}
 .matrix-title{font-size:13px;font-weight:600;margin-bottom:12px;padding-bottom:10px;border-bottom:0.5px solid var(--border)}
 .matrix-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);min-width:600px}
 .mh{background:var(--bg2);padding:8px 6px;font-size:11px;font-weight:500;color:var(--text2);text-align:center}
 .mc{background:var(--bg);padding:8px 6px;font-size:11px;text-align:center}
 .mc.hi{color:var(--teal-text);font-weight:500}.mc.mid{color:var(--amber-text)}.mc.lo{color:var(--text3)}
-
-/* STRUCT */
 .struct-box{background:var(--bg2);border-radius:var(--rl);padding:16px;margin-bottom:1.25rem}
 .struct-title{font-size:11px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
 .struct-row{display:flex;gap:8px;flex-wrap:wrap}
 .struct-item{font-size:11px;padding:5px 11px;border-radius:var(--r);background:var(--bg);border:0.5px solid var(--border2);color:var(--text)}
-
-/* PIPELINE */
 .pipeline-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .pcol{background:var(--bg2);border-radius:var(--rl);padding:12px}
 .pcol-head{font-size:10px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
@@ -123,8 +102,6 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .pdeal-name{font-size:12px;font-weight:500;margin-bottom:2px}
 .pdeal-size{font-size:11px;color:var(--text2)}
 .pdeal-tag{font-size:10px;padding:2px 7px;border-radius:20px;background:var(--bg2);color:var(--text2);display:inline-block;margin-top:5px;border:0.5px solid var(--border)}
-
-/* INTEL */
 .intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .intel-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:18px}
 .intel-title{font-size:13px;font-weight:600;margin-bottom:12px;padding-bottom:10px;border-bottom:0.5px solid var(--border)}
@@ -136,12 +113,9 @@ nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky
 .bar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:4px}
 .bar-bg{height:6px;background:var(--bg2);border-radius:3px;overflow:hidden}
 .bar-fill{height:100%;border-radius:3px;background:var(--text2);opacity:.45}
-
-/* FOOTER */
 footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-align:center;color:var(--text3);font-size:11px}
-
 .hidden{display:none!important}
-@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.pipeline-cols{grid-template-columns:repeat(2,1fr)}.intel-grid{grid-template-columns:1fr}.theme-tabs{flex-direction:column}.nav-right .badge{display:none}}
+@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.pipeline-cols{grid-template-columns:repeat(2,1fr)}.intel-grid{grid-template-columns:1fr}.theme-tabs{flex-direction:column}.nav-right .badge{display:none}.fx-note{display:none}}
 @media(max-width:480px){.cards{grid-template-columns:1fr}}
 </style>
 </head>
@@ -153,7 +127,7 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
       <div class="logo-kanji">門</div>
       <div>
         <div class="logo-name">Mon</div>
-        <div class="logo-sub" id="nav-sub">Japan → India Cross-Border M&A Platform</div>
+        <div class="logo-sub" id="nav-sub">Japan → India クロスボーダーM&Aプラットフォーム</div>
       </div>
     </a>
     <div class="nav-right">
@@ -161,6 +135,7 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
         <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         <button class="lang-btn active" id="btn-ja" onclick="setLang('ja')">日本語</button>
       </div>
+      <span class="fx-note" id="fx-note">FX: ¥158 = $1.00 (Apr 19, 2026)</span>
       <span class="badge">FY2026</span>
       <span class="badge badge-live">● Live</span>
       <button class="btn-nav" id="nav-contact">お問い合わせ</button>
@@ -172,7 +147,7 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
 <div class="page">
   <div class="metrics" style="margin-top:1.5rem">
     <div class="mcard"><div class="mcard-label" id="m1l">アクティブ候補社数</div><div class="mcard-value">47</div><div class="mcard-delta" id="m1d">↑ 今四半期 +12社</div></div>
-    <div class="mcard"><div class="mcard-label" id="m2l">総ディール規模</div><div class="mcard-value" id="total-deal">¥2.4兆 (~$15.1B)</div><div class="mcard-delta" id="m2d">↑ 前年比 +31%</div></div>
+    <div class="mcard"><div class="mcard-label" id="m2l">総ディール規模</div><div class="mcard-value" id="m2v">¥2.4兆</div><div class="mcard-delta" id="m2d">↑ 前年比 +31%</div></div>
     <div class="mcard"><div class="mcard-label" id="m3l">パイプライン件数</div><div class="mcard-value">18</div><div class="mcard-delta" id="m3d">うちDD中 4件</div></div>
     <div class="mcard"><div class="mcard-label" id="m4l">平均 EV/EBITDA</div><div class="mcard-value">14.2x</div><div class="mcard-delta" id="m4d">インドテックセクター</div></div>
   </div>
@@ -196,14 +171,13 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
         <div class="theme-count" id="th2-count">6社 · S〜B優先度</div>
       </button>
     </div>
-
     <div id="pane-green">
       <div class="section-row">
         <span class="section-title" id="cand-title">候補 6社</span>
         <div class="priority-key">
-          <span class="pk pk-s" id="pk-s-label">S — 即時検討</span>
-          <span class="pk pk-a" id="pk-a-label">A — 継続監視</span>
-          <span class="pk pk-b" id="pk-b-label">B — 中長期</span>
+          <span class="pk pk-s" id="pk-s-lbl">S — 即時検討</span>
+          <span class="pk pk-a" id="pk-a-lbl">A — 継続監視</span>
+          <span class="pk pk-b" id="pk-b-lbl">B — 中長期</span>
         </div>
       </div>
       <div class="cards" id="green-cards"></div>
@@ -216,14 +190,13 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
         <div class="struct-row" id="gstruct-items"></div>
       </div>
     </div>
-
     <div id="pane-blue" class="hidden">
       <div class="section-row">
         <span class="section-title" id="cand-title-b">候補 6社</span>
         <div class="priority-key">
-          <span class="pk pk-s" id="pk-s-label-b">S — 即時検討</span>
-          <span class="pk pk-a" id="pk-a-label-b">A — 継続監視</span>
-          <span class="pk pk-b" id="pk-b-label-b">B — 中長期</span>
+          <span class="pk pk-s" id="pk-s-lbl-b">S — 即時検討</span>
+          <span class="pk pk-a" id="pk-a-lbl-b">A — 継続監視</span>
+          <span class="pk pk-b" id="pk-b-lbl-b">B — 中長期</span>
         </div>
       </div>
       <div class="cards" id="blue-cards"></div>
@@ -241,147 +214,275 @@ footer{margin-top:3rem;padding:1.5rem;border-top:0.5px solid var(--border);text-
   <div id="tab-pipeline" class="hidden">
     <div class="pipeline-cols" id="pipeline-cols"></div>
   </div>
-
   <div id="tab-intel" class="hidden">
     <div class="intel-grid" id="intel-grid"></div>
   </div>
 </div>
 
 <footer id="footer-text">
-  © 2026 Mon M&A Platform · Powered by YENS Capital LLC · 情報はデモ目的であり投資助言ではありません
+  © 2026 Mon M&Aプラットフォーム · YENS Capital LLC · 情報はデモ目的であり投資助言ではありません
 </footer>
 
 <script>
-/* ═══════════════ I18N ═══════════════ */
+/* ═══════════════════════════════════════
+   CURRENCY CONVERSION
+   Rate: JPY 158 per USD (Apr 19, 2026)
+═══════════════════════════════════════ */
+const FX_RATE = 158; // JPY per USD
+
+// Input: amount in oku-yen (億円). Output: formatted string.
+function fmt(okuYen) {
+  if (lang === 'ja') {
+    // Format as Japanese: ¥XX億 or ¥X,XXX億
+    const n = Math.round(okuYen);
+    return '\u00a5' + n.toLocaleString('ja-JP') + '\u5104';
+  } else {
+    // Convert to USD — no Japanese characters
+    const usd = (okuYen * 1e8) / FX_RATE; // absolute USD
+    if (usd >= 1e9) {
+      return '$' + (usd / 1e9).toFixed(1) + 'B';
+    } else if (usd >= 1e8) {
+      return '$' + Math.round(usd / 1e6) + 'M';
+    } else if (usd >= 1e7) {
+      return '$' + (usd / 1e6).toFixed(1) + 'M';
+    } else {
+      return '$' + (usd / 1e6).toFixed(1) + 'M';
+    }
+  }
+}
+
+// Format pipeline deal sizes (stored as oku-yen numbers)
+function fmtDeal(okuYen) { return fmt(okuYen); }
+
+/* ═══════════════════════════════════════
+   I18N
+═══════════════════════════════════════ */
 const i18n = {
-  ja: { /* original Japanese translations - unchanged */ 
-    navSub: 'Japan → India クロスボーダーM&Aプラットフォーム',
-    navContact: 'お問い合わせ', navLogin: 'ログイン',
-    m1l:'アクティブ候補社数', m1d:'↑ 今四半期 +12社',
-    m2l:'総ディール規模', m2d:'↑ 前年比 +31%',
-    m3l:'パイプライン件数', m3d:'うちDD中 4件',
-    m4l:'平均 EV/EBITDA', m4d:'インドテックセクター',
-    tabTargets:'買収候補を探す', tabPipeline:'ディールパイプライン', tabIntel:'市場インテリジェンス',
-    th1Label:'サステナブルエネルギー', th1Count:'6社 · S〜A優先度',
-    th2Label:'フィジカルAI／ロボティクス', th2Count:'6社 · S〜B優先度',
-    candTitle:'候補 6社',
-    pkS:'S — 即時検討', pkA:'A — 継続監視', pkB:'B — 中長期',
-    gMatrixTitle:'比較スクリーニング・マトリクス — サステナブルエネルギー',
-    bMatrixTitle:'比較スクリーニング・マトリクス — フィジカルAI／ロボティクス',
-    gStructTitle:'推奨ディール組成 — サステナブルエネルギー',
-    bStructTitle:'推奨ディール組成 — フィジカルAI／ロボティクス',
-    matrixHeaders:['企業名','ASEAN拠点','日本シナジー','バリュエーション','M&A対応度'],
-    gMatrixData:[ /* original */ ],
-    bMatrixData:[ /* original */ ],
-    gStructItems:[ /* original */ ],
-    bStructItems:[ /* original */ ],
-    pipelineStages:['ソーシング','初期検討','NDA締結済','デューデリ','タームシート'],
-    pipelineData:[ /* original */ ],
-    intelSectorTitle:'インドセクター別バリュエーション（EV/EBITDA）',
-    intelMacroTitle:'マクロ・規制環境',
-    intelTxTitle:'日本→インド M&A 主要案件',
-    intelRationaleTitle:'買い手タイプ別・戦略的根拠',
-    intelSectors:[ /* original */ ],
-    intelMacro:[ /* original */ ],
-    intelTx:[ /* original */ ],
-    intelRationale:[ /* original */ ],
-    cardRevLabel:'売上高', cardEvLabel:'推定EV', cardEbitdaLabel:'EBITDA率',
-    cardAnalyze:'詳細分析を依頼', cardAdd:'パイプラインに追加',
-    fitLabel:'🇯🇵 日本適合性：',
-    footer:'© 2026 Mon M&Aプラットフォーム · YENS Capital LLC · 情報はデモ目的であり投資助言ではありません',
-    pLabels:{s:'S — 即時検討', a:'A — 継続監視', b:'B — 中長期'},
+  ja: {
+    navSub: 'Japan \u2192 India \u30af\u30ed\u30b9\u30dc\u30fc\u30c0\u30fcM&A\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0',
+    navContact:'\u304a\u554f\u3044\u5408\u308f\u305b', navLogin:'\u30ed\u30b0\u30a4\u30f3',
+    fxNote:'FX: \u00a5158 = $1.00 (2026\u5e744\u670819\u65e5)',
+    m1l:'\u30a2\u30af\u30c6\u30a3\u30d6\u5019\u88dc\u793e\u6570', m1d:'\u2191 \u4eca\u56db\u534a\u671f +12\u793e',
+    m2l:'\u7dcf\u30c7\u30a3\u30fc\u30eb\u898f\u6a21', m2d:'\u2191 \u524d\u5e74\u6bd4 +31%',
+    m3l:'\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u4ef6\u6570', m3d:'\u3046\u3061DD\u4e2d 4\u4ef6',
+    m4l:'\u5e73\u5747 EV/EBITDA', m4d:'\u30a4\u30f3\u30c9\u30c6\u30c3\u30af\u30bb\u30af\u30bf\u30fc',
+    tabTargets:'\u8cb7\u53ce\u5019\u88dc\u3092\u63a2\u3059', tabPipeline:'\u30c7\u30a3\u30fc\u30eb\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3', tabIntel:'\u5e02\u5834\u30a4\u30f3\u30c6\u30ea\u30b8\u30a7\u30f3\u30b9',
+    th1Label:'\u30b5\u30b9\u30c6\u30ca\u30d6\u30eb\u30a8\u30cd\u30eb\u30ae\u30fc', th1Count:'6\u793e \u00b7 S\uff5eA\u512a\u5148\u5ea6',
+    th2Label:'\u30d5\u30a3\u30b8\u30ab\u30ebAI\uff0f\u30ed\u30dc\u30c6\u30a3\u30af\u30b9', th2Count:'6\u793e \u00b7 S\uff5eB\u512a\u5148\u5ea6',
+    candTitle:'\u5019\u88dc 6\u793e',
+    pkS:'S \u2014 \u5373\u6642\u691c\u8a0e', pkA:'A \u2014 \u7d99\u7d9a\u76e3\u8996', pkB:'B \u2014 \u4e2d\u9577\u671f',
+    gMatrixTitle:'\u6bd4\u8f03\u30b9\u30af\u30ea\u30fc\u30cb\u30f3\u30b0\u30fb\u30de\u30c8\u30ea\u30af\u30b9 \u2014 \u30b5\u30b9\u30c6\u30ca\u30d6\u30eb\u30a8\u30cd\u30eb\u30ae\u30fc',
+    bMatrixTitle:'\u6bd4\u8f03\u30b9\u30af\u30ea\u30fc\u30cb\u30f3\u30b0\u30fb\u30de\u30c8\u30ea\u30af\u30b9 \u2014 \u30d5\u30a3\u30b8\u30ab\u30ebAI\uff0f\u30ed\u30dc\u30c6\u30a3\u30af\u30b9',
+    gStructTitle:'\u63a8\u5968\u30c7\u30a3\u30fc\u30eb\u7d44\u6210 \u2014 \u30b5\u30b9\u30c6\u30ca\u30d6\u30eb\u30a8\u30cd\u30eb\u30ae\u30fc',
+    bStructTitle:'\u63a8\u5968\u30c7\u30a3\u30fc\u30eb\u7d44\u6210 \u2014 \u30d5\u30a3\u30b8\u30ab\u30ebAI\uff0f\u30ed\u30dc\u30c6\u30a3\u30af\u30b9',
+    matrixHeaders:['\u4f01\u696d\u540d','ASEAN\u62e0\u70b9','\u65e5\u672c\u30b7\u30ca\u30b8\u30fc','\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3','M&A\u5bfe\u5fdc\u5ea6'],
+    gMatrixRows:[
+      ['Greenko Group','\u30b7\u30f3\u30ac\u30dd\u30fcHoldCo','GX-ETS\u30af\u30ec\u30b8\u30c3\u30c8','\u3084\u3084\u9ad8\u3044\uff0818x\uff09','PE\u4fdd\u6709\u30fb\u5bfe\u5fdc\u53ef','hi','lo','hi','hi','hi'],
+      ['Waaree Energies','SEA\u5411\u3051\u8f38\u51fa\u6e08','\u30e2\u30b8\u30e5\u30fc\u30eb\u4f9b\u7d66','\u9069\u6b63\uff0812x\uff09','\u4e0a\u5834\u30fb\u900f\u660e\u6027\u9ad8','hi','hi','hi','hi','hi'],
+      ['CleanMax','SG\u62e0\u70b9\u3042\u308a','C&I\u96fb\u529b\u4f9b\u7d66','\u9b45\u529b\u7684\uff0811x\uff09','\u30b9\u30dd\u30f3\u30b5\u30fc\u4fdd\u6709','mid','hi','hi','hi','hi'],
+      ['Amplus Energy','SEA\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3','RE100\u5bfe\u5fdc','\u9069\u6b63\uff0814x\uff09','PETRONAS JV','mid','hi','mid','mid','mid'],
+      ['Vikram Solar','\u8f38\u51fa\u4f53\u5236\u6574\u5099\u4e2d','\u30e2\u30b8\u30e5\u30fc\u30ebOEM','\u4f4e\u3044\uff089x\uff09','\u30d7\u30ed\u30e2\u30fc\u30bf\u30fc\u4fdd\u6709','mid','mid','hi','mid','mid'],
+      ['Avaada Energy','\u56fd\u5185\u4e2d\u5fc3','\u30b0\u30ea\u30fc\u30f3H2','\u9069\u6b63\uff0813x\uff09','IFC\u51fa\u8cc7','lo','hi','mid','mid','mid'],
+    ],
+    bMatrixRows:[
+      ['Addverb Technologies','SG\u62e0\u70b9\u7a3c\u50cd\u4e2d','\u30c8\u30e8\u30bf\u30fb\u65e5\u7acb\u9069\u5408','\u6210\u9577\u682a\uff0822x\uff09','SB\u51fa\u8cc7\u30fb\u5bfe\u5fdc\u53ef','hi','hi','mid','hi','hi'],
+      ['GreyOrange','SEA\u5009\u5eab\u5c55\u958b\u6e08','\u7269\u6d41AI','\u9ad8\u3044\uff0830x+\uff09','IPO\u524d\u7a93\u9589\u307e\u308b','hi','hi','lo','mid','mid'],
+      ['Ati Motors','SG\u30d1\u30a4\u30ed\u30c3\u30c8\u4e2d','\u5de5\u5834\u5185AMR','\u4f4e\u3044\uff088\uff5e12x\uff09','Series B\u30fb\u4ea4\u6e09\u53ef','mid','hi','hi','hi','hi'],
+      ['Gridbots','\u56fd\u5185\u306e\u307f','\u70b9\u691cAI','\u4f4e\u3044\uff087x\uff09','\u30d7\u30ed\u30e2\u30fc\u30bf\u30fc\u652f\u914d','lo','hi','hi','mid','mid'],
+      ['Systemantics','\u8f38\u51fa\u30d1\u30a4\u30ed\u30c3\u30c8\u4e2d','\u7523\u696d\u7528\u30a2\u30fc\u30e0','\u4f4e\u3044\uff088x\uff09','\u4e2d\u5c0f\u30fb\u4ea4\u6e09\u4f59\u5730','lo','hi','hi','mid','mid'],
+      ['Sastra Robotics','\u56fd\u5185\u4e2d\u5fc3','\u30c6\u30b9\u30c8\u81ea\u52d5\u5316','\u30b7\u30fc\u30c9\u6bb5\u968e','\u30a2\u30fc\u30ea\u30fc\u30fb\u67d4\u8edf','lo','mid','hi','hi','hi'],
+    ],
+    gStructItems:['\u30b7\u30f3\u30ac\u30dd\u30fcHoldCo\u7d4c\u7531\u3067\u30a4\u30f3\u30c9OpCo\u53d6\u5f97','JBIC\u30b0\u30ea\u30fc\u30f3\u30d5\u30a1\u30b7\u30ea\u30c6\u30a3\u6d3b\u7528','GX-ETS\u30af\u30ec\u30b8\u30c3\u30c8\u30fb\u30aa\u30d5\u30c6\u30a4\u30af\u6761\u9805\u4ed8\u5e2f','\u5c11\u6570\u682a\u4e3b\u2192\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u30aa\u30d7\u30b7\u30e7\u30f3\uff082\uff5e3\u5e74\uff09','RE100 PPA\u53d6\u5f97\u3068\u540c\u6642\u30af\u30ed\u30fc\u30b8\u30f3\u30b0','JICA\u30a2\u30b8\u30a2\u30a4\u30f3\u30d5\u30e9\u878d\u8cc7\u67a0\u306e\u6d3b\u7528'],
+    bStructItems:['\u6226\u7565\u7684\u5c11\u6570\u682a\uff0820\uff5e30%\uff09\u2192\u8cb7\u53ce\u30aa\u30d7\u30b7\u30e7\u30f3\u4ed8\u4e0e','IP\u4f7f\u7528\u8a31\u8afe\uff0bASEAN JV\u5171\u540c\u7d44\u6210','\u30a8\u30f3\u30b8\u30cb\u30a2\u306e\u65e5\u672c\u672c\u793e\u3078\u306e\u51fa\u5411\uff08\u7cfb\u5217\u7d71\u5408\uff09','\u30af\u30ed\u30fc\u30b8\u30f3\u30b0\u524d\u306bASEAN\u5de5\u5834\u5c55\u958b\u30d1\u30a4\u30ed\u30c3\u30c8\u5b9f\u65bd','\u4eba\u6750\u78ba\u4fdd\uff1aASEAN\u58f2\u4e0a\u9023\u52d53\u5e74\u30a2\u30fc\u30f3\u30a2\u30a6\u30c8','NEDO\u52a9\u6210\u91d1\u5bfe\u8c61\uff08\u65e5\u5370\u30ed\u30dc\u30c6\u30a3\u30af\u30b9\u5354\u529b\uff09'],
+    pipelineStages:['\u30bd\u30fc\u30b7\u30f3\u30b0','\u521d\u671f\u691c\u8a0e','NDA\u7de0\u7d50\u6e08','\u30c7\u30e5\u30fc\u30c7\u30ea','\u30bf\u30fc\u30e0\u30b7\u30fc\u30c8'],
+    cardRevLabel:'\u58f2\u4e0a\u9ad8', cardEvLabel:'\u63a8\u5b9aEV', cardEbitdaLabel:'EBITDA\u7387',
+    cardAnalyze:'\u8a73\u7d30\u5206\u6790\u3092\u4f9d\u983c', cardAdd:'\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u306b\u8ffd\u52a0',
+    fitLabel:'\U0001f1ef\U0001f1f5 \u65e5\u672c\u9069\u5408\u6027\uff1a',
+    intelSectorTitle:'\u30a4\u30f3\u30c9\u30bb\u30af\u30bf\u30fc\u5225\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\uff08EV/EBITDA\uff09',
+    intelMacroTitle:'\u30de\u30af\u30ed\u30fb\u898f\u5236\u74b0\u5883',
+    intelTxTitle:'\u65e5\u672c\u2192\u30a4\u30f3\u30c9 M&A \u4e3b\u8981\u6848\u4ef6',
+    intelRationaleTitle:'\u8cb7\u3044\u624b\u30bf\u30a4\u30d7\u5225\u30fb\u6226\u7565\u7684\u6839\u62e0',
+    footer:'\u00a9 2026 Mon M&A\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0 \u00b7 YENS Capital LLC \u00b7 \u60c5\u5831\u306f\u30c7\u30e2\u76ee\u7684\u3067\u3042\u308a\u6295\u8cc7\u52a9\u8a00\u3067\u306f\u3042\u308a\u307e\u305b\u3093',
+    pLabels:{s:'S \u2014 \u5373\u6642\u691c\u8a0e', a:'A \u2014 \u7d99\u7d9a\u76e3\u8996', b:'B \u2014 \u4e2d\u9577\u671f'},
   },
-  en: { /* original English translations - unchanged */ 
-    navSub: 'Japan → India Cross-Border M&A Platform',
-    navContact: 'Contact', navLogin: 'Login',
-    m1l:'Active Targets', m1d:'↑ +12 this quarter',
-    m2l:'Total Deal Value', m2d:'↑ +31% YoY',
+  en: {
+    navSub:'Japan \u2192 India Cross-Border M&A Platform',
+    navContact:'Contact', navLogin:'Login',
+    fxNote:'FX: JPY 158 = USD 1.00 (Apr 19, 2026)',
+    m1l:'Active Targets', m1d:'\u2191 +12 this quarter',
+    m2l:'Total Deal Value', m2d:'\u2191 +31% YoY',
     m3l:'Pipeline Deals', m3d:'4 in Due Diligence',
     m4l:'Avg. EV/EBITDA', m4d:'India tech sector',
     tabTargets:'Browse Targets', tabPipeline:'Deal Pipeline', tabIntel:'Market Intelligence',
-    th1Label:'Sustainable Energy', th1Count:'6 companies · Priority S–A',
-    th2Label:'Physical AI / Robotics', th2Count:'6 companies · Priority S–B',
+    th1Label:'Sustainable Energy', th1Count:'6 companies \u00b7 Priority S\u2013A',
+    th2Label:'Physical AI / Robotics', th2Count:'6 companies \u00b7 Priority S\u2013B',
     candTitle:'6 Target Companies',
-    pkS:'S — Acquire Now', pkA:'A — Track Closely', pkB:'B — Watch',
-    gMatrixTitle:'Screening Matrix — Sustainable Energy',
-    bMatrixTitle:'Screening Matrix — Physical AI / Robotics',
-    gStructTitle:'Recommended Deal Structures — Sustainable Energy',
-    bStructTitle:'Recommended Deal Structures — Physical AI / Robotics',
+    pkS:'S \u2014 Acquire Now', pkA:'A \u2014 Track Closely', pkB:'B \u2014 Watch',
+    gMatrixTitle:'Screening Matrix \u2014 Sustainable Energy',
+    bMatrixTitle:'Screening Matrix \u2014 Physical AI / Robotics',
+    gStructTitle:'Recommended Deal Structures \u2014 Sustainable Energy',
+    bStructTitle:'Recommended Deal Structures \u2014 Physical AI / Robotics',
     matrixHeaders:['Company','ASEAN Presence','Japan Synergy','Valuation','M&A Readiness'],
-    gMatrixData:[ /* original */ ],
-    bMatrixData:[ /* original */ ],
-    gStructItems:[ /* original */ ],
-    bStructItems:[ /* original */ ],
+    gMatrixRows:[
+      ['Greenko Group','Singapore HoldCo','GX-ETS credits','Premium (18x)','PE-backed, open','hi','lo','hi','hi','hi'],
+      ['Waaree Energies','SEA exports active','Module supply','Reasonable (12x)','Listed, receptive','hi','hi','hi','hi','hi'],
+      ['CleanMax','SG base','C&I offtake','Attractive (11x)','Sponsor-backed','mid','hi','hi','hi','hi'],
+      ['Amplus Energy','SEA pipeline','RE100 compliant','Fair (14x)','PETRONAS JV','mid','hi','mid','mid','mid'],
+      ['Vikram Solar','Export-ready','Module OEM','Low (9x)','Promoter-held','mid','mid','hi','mid','mid'],
+      ['Avaada Energy','India-focused','Green H2','Fair (13x)','IFC-backed','lo','hi','mid','mid','mid'],
+    ],
+    bMatrixRows:[
+      ['Addverb Technologies','Singapore ops','Toyota/Hitachi fit','Growth (22x)','SoftBank-backed','hi','hi','mid','hi','hi'],
+      ['GreyOrange','SEA warehouses','Logistics AI','High (30x+)','Pre-IPO, closing','hi','hi','lo','mid','mid'],
+      ['Ati Motors','SG pilot active','Factory AMR','Low (8\u201312x)','Series B, open','mid','hi','hi','hi','hi'],
+      ['Gridbots','India-only','Inspection AI','Low (7x)','Promoter control','lo','hi','hi','mid','mid'],
+      ['Systemantics','Export pilots','Industrial arms','Low (8x)','SME, negotiable','lo','hi','hi','mid','mid'],
+      ['Sastra Robotics','India-focused','Test automation','Seed-stage','Early, flexible','lo','mid','hi','hi','hi'],
+    ],
+    gStructItems:['Singapore HoldCo acquires India OpCo','JBIC green facility co-financing','GX-ETS carbon credit offtake clause','Minority stake \u2192 control option (2\u20133 yr)','RE100 PPA bundled at closing','JICA ASEAN infrastructure facility'],
+    bStructItems:['Strategic minority (20\u201330%) \u2192 buyout option','IP licensing + ASEAN JV structure','Engineer secondment to Japan HQ','ASEAN factory pilot pre-closing','3-yr earnout tied to ASEAN revenue','NEDO grant eligible (Japan-India robotics)'],
     pipelineStages:['Sourcing','Initial Review','NDA Signed','Due Diligence','Term Sheet'],
-    pipelineData:[ /* original */ ],
-    intelSectorTitle:'India Sector Valuations (EV/EBITDA)',
-    intelMacroTitle:'Macro & Regulatory Context',
-    intelTxTitle:'Recent Japan → India Transactions',
-    intelRationaleTitle:'Strategic Rationale by Acquirer Type',
-    intelSectors:[ /* original */ ],
-    intelMacro:[ /* original */ ],
-    intelTx:[ /* original */ ],
-    intelRationale:[ /* original */ ],
     cardRevLabel:'Revenue', cardEvLabel:'Est. EV', cardEbitdaLabel:'EBITDA',
     cardAnalyze:'Request Analysis', cardAdd:'Add to Pipeline',
-    fitLabel:'🇯🇵 Japan Fit: ',
-    footer:'© 2026 Mon M&A Platform · Powered by YENS Capital LLC · For demonstration purposes only, not investment advice',
-    pLabels:{s:'S — Acquire Now', a:'A — Track Closely', b:'B — Watch'},
+    fitLabel:'\U0001f1ef\U0001f1f5 Japan Fit: ',
+    intelSectorTitle:'India Sector Valuations (EV/EBITDA)',
+    intelMacroTitle:'Macro & Regulatory Context',
+    intelTxTitle:'Recent Japan \u2192 India Transactions',
+    intelRationaleTitle:'Strategic Rationale by Acquirer Type',
+    footer:'\u00a9 2026 Mon M&A Platform \u00b7 Powered by YENS Capital LLC \u00b7 For demonstration purposes only, not investment advice',
+    pLabels:{s:'S \u2014 Acquire Now', a:'A \u2014 Track Closely', b:'B \u2014 Watch'},
   }
 };
 
-/* Exchange rate (1 USD = 158.5 JPY) - updated April 2026 */
-const EXCHANGE_RATE = 158.5;
-
-/* Helper: Convert billion JPY (e.g. "1800") to clean USD string */
-function toUSD(billionJPYStr) {
-  const num = parseFloat(billionJPYStr.replace(/[^0-9.]/g, ''));
-  if (isNaN(num)) return '';
-  const usdMillion = (num * 100) / EXCHANGE_RATE;
-  return usdMillion >= 1000 
-    ? `$${(usdMillion / 1000).toFixed(1)}B` 
-    : `$${Math.round(usdMillion)}M`;
-}
-
-/* Target Data with separate JA/EN values */
-const greenTargets = [
-  {name:'Greenko Group',hqJa:'ハイデラバード',hqEn:'Hyderabad',avatar:'GK',bg:'#EAF3DE',tc:'#3B6D11',priority:'s',
-   subJa:'再生可能エネルギー総合プラットフォーム',subEn:'Integrated Renewable Energy Platform',
-   revJa:'¥1,800億', revEn:toUSD('1800'), evJa:'¥9,200億', evEn:toUSD('9200'), ebitda:'52%',
-   tags:['揚水発電 / Pumped Hydro','風力 / Wind','太陽光 / Solar','グリーンH2 / Green H2'],
-   rationaleJa:'インド最大の統合型再生可能エネルギープラットフォーム。...',
-   rationaleEn:'India\'s largest integrated renewable platform with 20GW+ capacity. ...',
-   fitJa:'GX-ETS向けカーボンクレジットを直接創出。...', fitEn:'Direct GX-ETS carbon credit generation. ...', fitClass:'gr'},
-
-  {name:'Waaree Energies',hqJa:'ムンバイ／グジャラート',hqEn:'Mumbai / Gujarat',avatar:'WE',bg:'#EAF3DE',tc:'#3B6D11',priority:'s',
-   subJa:'太陽光モジュールメーカー',subEn:'Solar Module Manufacturer',
-   revJa:'¥950億', revEn:toUSD('950'), evJa:'¥4,200億', evEn:toUSD('4200'), ebitda:'18%',
-   tags:['太陽光モジュール','EPC','ASEAN輸出','NSE上場'],
-   rationaleJa:'インド最大の太陽光モジュールメーカー。...', rationaleEn:'India\'s largest solar module maker, ...',
-   fitJa:'ASEAN太陽光発電所を開発する日本EPCへの...', fitEn:'Plug-and-play module supply for Japanese EPCs ...', fitClass:'gr'},
-
-  /* Add the remaining 4 green targets similarly (I shortened for brevity - copy the original rationale/fit and add revJa/revEn, evJa/evEn) */
-  /* CleanMax, Amplus Energy, Vikram Solar, Avaada Energy - use the same pattern as above */
+/* ═══════════════════════════════════════
+   TARGET DATA  (amounts in oku-yen)
+═══════════════════════════════════════ */
+const greenTargets=[
+  {name:'Greenko Group',hqJa:'\u30cf\u30a4\u30c7\u30e9\u30d0\u30fc\u30c9',hqEn:'Hyderabad',avatar:'GK',bg:'#EAF3DE',tc:'#3B6D11',priority:'s',
+   subJa:'\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc\u7dcf\u5408\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0',subEn:'Integrated Renewable Energy Platform',
+   revOku:1800,evOku:9200,ebitda:'52%',
+   tags:['\u63da\u6c34\u767a\u96fb / Pumped Hydro','\u98a8\u529b / Wind','\u592a\u967d\u5149 / Solar','\u30b0\u30ea\u30fc\u30f3H2 / Green H2'],
+   rationaleJa:'\u30a4\u30f3\u30c9\u6700\u5927\u306e\u7d71\u5408\u578b\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u767a\u96fb\u5bb9\u91cf20GW\u8d85\u3002\u30b7\u30f3\u30ac\u30dd\u30fcHoldCo\uff08GreenCo Pte\uff09\u3092\u65e2\u306b\u8a2d\u7acb\u6e08\u307f\u3002ADIA\u304a\u3088\u3073GIC\u304c\u5171\u540c\u51fa\u8cc7\u3057\u3066\u304a\u308aM&A\u53d7\u3051\u5165\u308c\u4f53\u5236\u304c\u6574\u3063\u3066\u3044\u308b\u3002',
+   rationaleEn:"India's largest integrated renewable platform, 20GW+ capacity. Singapore HoldCo (GreenCo Pte) already operational. ADIA and GIC as co-investors signal strong M&A readiness.",
+   fitJa:'GX-ETS\u5411\u3051\u30ab\u30fc\u30dc\u30f3\u30af\u30ec\u30b8\u30c3\u30c8\u3092\u76f4\u63a5\u5275\u51fa\u3002\u63da\u6c34\u767a\u96fb\u8cc7\u7523\u306f\u65e5\u672c\u306e\u7cfb\u7d71\u84c4\u96fb\u4e0d\u8db3\u306b\u5bfe\u5fdc\u3002JBIC\u306fGreenko\u5411\u3051\u306b\u878d\u8cc7\u5b9f\u7e3e\u3042\u308a\u3002',
+   fitEn:"Direct GX-ETS carbon credit generation. Pumped hydro addresses Japan's grid storage deficit. JBIC has prior financing history with Greenko.",fitClass:'gr'},
+  {name:'Waaree Energies',hqJa:'\u30e0\u30f3\u30d0\u30a4\uff0f\u30b0\u30b8\u30e3\u30e9\u30fc\u30c8',hqEn:'Mumbai / Gujarat',avatar:'WE',bg:'#EAF3DE',tc:'#3B6D11',priority:'s',
+   subJa:'\u592a\u967d\u5149\u30e2\u30b8\u30e5\u30fc\u30eb\u30e1\u30fc\u30ab\u30fc',subEn:'Solar Module Manufacturer',
+   revOku:950,evOku:4200,ebitda:'18%',
+   tags:['\u592a\u967d\u5149\u30e2\u30b8\u30e5\u30fc\u30eb','EPC','ASEAN\u8f38\u51fa','NSE\u4e0a\u5834'],
+   rationaleJa:'\u30a4\u30f3\u30c9\u6700\u5927\u306e\u592a\u967d\u5149\u30e2\u30b8\u30e5\u30fc\u30eb\u30e1\u30fc\u30ab\u30fc\u3002NSE\u4e0a\u5834\u4f01\u696d\u3067\u8ca1\u52d9\u900f\u660e\u6027\u304c\u9ad8\u3044\u3002\u30d9\u30c8\u30ca\u30e0\u30fb\u30bf\u30a4\u30fb\u30aa\u30fc\u30b9\u30c8\u30e9\u30ea\u30a2\u3078\u306e\u30e2\u30b8\u30e5\u30fc\u30eb\u8f38\u51fa\u5b9f\u7e3e\u3042\u308a\u3002\u5e74\u7523\u80fd\u529b12GW\u3002',
+   rationaleEn:"India's largest solar module maker, listed on NSE with transparent financials. Active module exports to Vietnam, Thailand, and Australia. 12GW annual capacity.",
+   fitJa:'ASEAN\u592a\u967d\u5149\u767a\u96fb\u6240\u3092\u958b\u767a\u3059\u308b\u65e5\u672c\u30a2\u30d5\u30a9\u3078\u306e\u30e2\u30b8\u30e5\u30fc\u30eb\u4f9b\u7d66\u6e90\u3068\u3057\u3066\u5373\u6d3b\u7528\u53ef\u80fd\u3002\u4e2d\u56fd\u30b5\u30d7\u30e9\u30a4\u30c1\u30a7\u30fc\u30f3\u4ee3\u66ff\u3068\u3057\u3066\u6226\u7565\u4fa1\u5024\u9ad8\u3044\u3002',
+   fitEn:"Plug-and-play module supply for Japanese EPCs deploying ASEAN solar farms. High strategic value as China supply chain alternative.",fitClass:'gr'},
+  {name:'CleanMax',hqJa:'\u30e0\u30f3\u30d0\u30a4\uff08SG HoldCo\uff09',hqEn:'Mumbai (SG HoldCo)',avatar:'CM',bg:'#EAF3DE',tc:'#3B6D11',priority:'s',
+   subJa:'\u7523\u696d\u7528\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc',subEn:'Commercial & Industrial Renewables',
+   revOku:320,evOku:1650,ebitda:'38%',
+   tags:['C&I\u592a\u967d\u5149','PPA','RE100','Singapore'],
+   rationaleJa:'\u7523\u696d\u30fb\u5546\u696d\u5411\u3051\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc\u5c02\u696d\u3002\u30b7\u30f3\u30ac\u30dd\u30fc\u6301\u682a\u4f1a\u793e\u69cb\u9020\u3002\u30c8\u30e8\u30bf\u30fb\u30d1\u30ca\u30bd\u30cb\u30c3\u30af\u30fb\u30c7\u30f3\u30bd\u30fc\u306a\u3069\u65e5\u7cfb\u88fd\u9020\u696d\u3078\u306ePPA\u4f9b\u7d66\u5b9f\u7e3e\u3042\u308a\u3002Warburg Pincus\u51fa\u8cc7\u3002',
+   rationaleEn:"C&I renewable specialist with Singapore HoldCo structure. Existing PPAs with Toyota, Panasonic and Denso in India. Warburg Pincus-backed.",
+   fitJa:'\u30a4\u30f3\u30c9\u9032\u51fa\u65e5\u7cfb\u30e1\u30fc\u30ab\u30fc\u304c\u3059\u3067\u306bCleanMax\u304b\u3089\u96fb\u529b\u8abf\u9054\u4e2d\u3002\u8cb7\u53ce\u306b\u3088\u308a\u300c\u4ed5\u5165\u5148\u300d\u3092\u81ea\u793e\u30b0\u30ea\u30fc\u30f3\u30a8\u30cd\u30eb\u30ae\u30fc\u90e8\u9580\u306b\u8ee2\u63dbASEAN\u5c55\u958b\u306b\u3082\u6a2a\u5c55\u958b\u304c\u53ef\u80fd\u3002',
+   fitEn:"Japanese manufacturers in India already buy CleanMax power. Acquisition converts vendor into captive green energy arm across India and ASEAN.",fitClass:'gr'},
+  {name:'Amplus Energy',hqJa:'\u30b0\u30eb\u30b0\u30e9\u30e0',hqEn:'Gurugram',avatar:'AM',bg:'#EAF3DE',tc:'#3B6D11',priority:'a',
+   subJa:'\u5206\u6563\u578b\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc',subEn:'Distributed Renewable Energy',
+   revOku:280,evOku:1450,ebitda:'41%',
+   tags:['\u5c4b\u6839\u7f6e\u304d\u592a\u967d\u5149','C&I','SEA\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3','PETRONAS JV'],
+   rationaleJa:'\u5206\u6563\u578b\u592a\u967d\u5149\u306e\u30ea\u30fc\u30c0\u30fc\u4f01\u696d\u3002\u30de\u30ec\u30fc\u30b7\u30a2\u306ePETRONAS\u304c\u65e2\u5b58\u6226\u7565\u30d1\u30fc\u30c8\u30ca\u30fc\u3068\u3057\u3066JV\u3092\u7d44\u6210\u3057\u3066\u304a\u308aASEAN\u5c55\u958b\u306e\u76f4\u63a5\u7684\u306a\u6a4b\u6e21\u3057\u5f79\u3068\u306a\u308b\u3002',
+   rationaleEn:"Distributed solar leader with PETRONAS (Malaysia) as existing JV partner. Active pipeline in Malaysia and Vietnam. IFC equity stake provides governance transparency.",
+   fitJa:'PETRONAS\u3068\u306eJV\u304c\u30de\u30ec\u30fc\u30b7\u30a2\u5e02\u5834\u3078\u306e\u5373\u6642\u30a8\u30f3\u30c8\u30ea\u30fc\u3092\u63d0\u4f9b\u3002ASEAN\u65e5\u7cfb\u5de5\u5834\u306eRE100\u5bfe\u5fdc\u306b\u76f4\u7d50\u3002',
+   fitEn:"PETRONAS JV provides immediate Malaysia market entry. RE100 compliance for Japanese ASEAN factories. Green bond structure aligns with Japanese ESG standards.",fitClass:'gr'},
+  {name:'Vikram Solar',hqJa:'\u30b3\u30eb\u30ab\u30bf\uff0f\u30c1\u30a7\u30f3\u30ca\u30a4',hqEn:'Kolkata / Chennai',avatar:'VS',bg:'#EAF3DE',tc:'#3B6D11',priority:'a',
+   subJa:'\u592a\u967d\u5149\u30e2\u30b8\u30e5\u30fc\u30eb\u30fbEPC',subEn:'Solar Module & EPC',
+   revOku:420,evOku:1950,ebitda:'14%',
+   tags:['\u30e2\u30b8\u30e5\u30fc\u30eb','EPC','\u6b27\u5dde\u8f38\u51fa','\u4e21\u9762\u767a\u96fb'],
+   rationaleJa:'\u30e2\u30b8\u30e5\u30fc\u30eb\u54c1\u8cea\u3067\u9ad8\u3044\u8a55\u4fa1\u3092\u6301\u3061\u6b27\u5dde\u8f38\u51fa\u5b9f\u7e3e\uff08CE\u8a8d\u8a3c\u53d6\u5f97\u6e08\u307f\uff09\u3002\u30d7\u30ed\u30e2\u30fc\u30bf\u30fc\u4fdd\u6709\u306e\u5bb6\u65cf\u4f01\u696d\u3067\u4e8b\u696d\u627f\u7d99\u306e\u30c0\u30a4\u30ca\u30df\u30af\u30b9\u304c\u8cb7\u53ce\u6a5f\u4f1a\u3092\u5275\u51fa\u3059\u308b\u53ef\u80fd\u6027\u3002',
+   rationaleEn:"Strong module quality with European export track record (CE certified). Promoter-held family company — succession dynamics may create acquisition opportunity.",
+   fitJa:'\u65e5\u672c\u7cfb\u8cb7\u53ce\u8005\u304c\u30e2\u30b8\u30e5\u30fc\u30eb\u54c1\u8cea\u3092\u6d3b\u304bASEAN\u5c55\u958b\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u6295\u5165\u53ef\u80fd\u3002\u300c\u65e5\u672c\u30d6\u30e9\u30f3\u30c9\u300d\u51a0\u3067\u30a2\u30b8\u30a2\u5411\u3051\u30e2\u30b8\u30e5\u30fc\u30ebOEM\u3068\u3057\u3066\u518d\u5b9a\u4f4d\u3059\u308b\u6226\u7565\u3082\u6709\u52b9\u3002',
+   fitEn:"Japanese acquirer can leverage module quality for ASEAN solar projects. Potential to reposition as Japan-branded module OEM for Asia.",fitClass:'gr'},
+  {name:'Avaada Energy',hqJa:'\u30cb\u30e5\u30fc\u30c7\u30ea\u30fc',hqEn:'New Delhi',avatar:'AV',bg:'#EAF3DE',tc:'#3B6D11',priority:'b',
+   subJa:'\u5927\u898f\u6a21\u592a\u967d\u5149\u30fb\u30b0\u30ea\u30fc\u30f3H2',subEn:'Utility-Scale Solar & Green H2',
+   revOku:220,evOku:1300,ebitda:'44%',
+   tags:['\u5927\u898f\u6a21\u592a\u967d\u5149','\u30b0\u30ea\u30fc\u30f3H2','IFC\u51fa\u8cc7','\u30ab\u30fc\u30dc\u30f3\u30af\u30ec\u30b8\u30c3\u30c8'],
+   rationaleJa:'IFC\u30fbNorfund\u51fa\u8cc7\u3002\u30b0\u30ea\u30fc\u30f3\u6c34\u7d20\u3078\u306e\u65e9\u671f\u53c2\u5165\u8005\u3068\u3057\u3066\u5dee\u5225\u5316\u3002\u73fe\u6642\u70b9\u306f\u30a4\u30f3\u30c9\u56fd\u5185\u4e2d\u5fc3\u3060\u304c\u6c34\u7d20\u8f38\u51fa\u30c6\u30fc\u30bc\u306fASEAN\u5411\u3051\u5c55\u958b\u4f59\u5730\u3042\u308a\u3002',
+   rationaleEn:"IFC and Norfund-backed. Early green hydrogen mover. Predominantly India-focused but hydrogen export thesis has ASEAN angle.",
+   fitJa:'METI\u306e\u6c34\u7d20\u8f38\u5165\u76ee\u6a19\uff082030\u5e74300\u4e07\u30c8\u30f3\uff09\u306b\u7167\u3089\u3057\u30a4\u30f3\u30c9\u7523\u30b0\u30ea\u30fc\u30f3\u6c34\u7d20\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u306f\u6226\u7565\u7684\u306b\u91cd\u8981\u3002NEDO\u65e5\u5370\u6c34\u7d20\u5354\u529b\u52a9\u6210\u91d1\u5bfe\u8c61\u306b\u3082\u8a72\u5f53\u3002',
+   fitEn:"Aligns with METI's hydrogen import target (3MT by 2030). NEDO Japan-India hydrogen cooperation grant eligible.",fitClass:'gr'},
 ];
 
-const blueTargets = [
-  {name:'Addverb Technologies',hqJa:'ノイダ／シンガポール',hqEn:'Noida / Singapore',avatar:'AD',bg:'#E6F1FB',tc:'#185FA5',priority:'s',
-   subJa:'倉庫ロボティクス・AI',subEn:'Warehouse Robotics & AI',
-   revJa:'¥180億', revEn:toUSD('180'), evJa:'¥1,200億', evEn:toUSD('1200'), ebitda:'16%',
-   tags:['AMR','倉庫AI','SG拠点','SoftBank出資'],
-   rationaleJa:'インドで最も国際展開が進んだロボティクス企業。...', rationaleEn:'India\'s most internationally scaled robotics firm. ...',
-   fitJa:'日立物流・トヨタ物流・三菱倉庫が...', fitEn:'Hitachi Logistics, Toyota Logistics ...', fitClass:'bl'},
-
-  /* Add the remaining 5 blue targets similarly (GreyOrange, Ati Motors, Gridbots, Systemantics, Sastra Robotics) */
+const blueTargets=[
+  {name:'Addverb Technologies',hqJa:'\u30ce\u30a4\u30c0\uff0f\u30b7\u30f3\u30ac\u30dd\u30fc\u30eb',hqEn:'Noida / Singapore',avatar:'AD',bg:'#E6F1FB',tc:'#185FA5',priority:'s',
+   subJa:'\u5009\u5eab\u30ed\u30dc\u30c6\u30a3\u30af\u30b9\u30fbAI',subEn:'Warehouse Robotics & AI',
+   revOku:180,evOku:1200,ebitda:'16%',
+   tags:['AMR','\u5009\u5eabAI','SG\u62e0\u70b9','SoftBank\u51fa\u8cc7'],
+   rationaleJa:'\u30a4\u30f3\u30c9\u3067\u6700\u3082\u56fd\u969b\u5c55\u958b\u304c\u9032\u3093\u3060\u30ed\u30dc\u30c6\u30a3\u30af\u30b9\u4f01\u696d\u3002\u30b7\u30f3\u30ac\u30dd\u30fc\u30eb\u62e0\u70b9\u7a3c\u50cd\u4e2d\u3002SoftBank\u30d3\u30b8\u30e7\u30f3\u30d5\u30a1\u30f3\u30c9\u306e\u51fa\u8cc7\u306b\u3088\u308a\u65e5\u672c\u4f01\u696d\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u3078\u306e\u30a2\u30af\u30bb\u30b9\u304c\u5bb9\u6613\u300245\u30ab\u56fd\u4ee5\u4e0a\u306b\u5c0e\u5165\u5b9f\u7e3e\u3002',
+   rationaleEn:"India's most internationally scaled robotics firm. Singapore office live. SoftBank Vision Fund-backed — existing Japanese corporate network access. Deployed in 45+ countries.",
+   fitJa:'\u65e5\u7acb\u7269\u6d41\u30fb\u30c8\u30e8\u30bf\u7269\u6d41\u30fb\u4e09\u83f1\u5009\u5eab\u304c\u6700\u6709\u529b\u306e\u6226\u7565\u30d0\u30a4\u30e4\u30fc\u5019\u88dc\u3002\u65e5\u672c\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2\u30ed\u30dc\u30c6\u30a3\u30af\u30b9\u3068AI\u99c6\u52d5\u578b\u5009\u5eab\u7ba1\u7406\u30bd\u30d5\u30c8\u306e\u7d71\u5408\u30ae\u30e3\u30c3\u30d7\u3092\u57cb\u3081\u308b\u6700\u6709\u529b\u8cc7\u7523\u3002',
+   fitEn:"Hitachi Logistics, Toyota Logistics, Mitsubishi Warehouse are top strategic buyer candidates. Fills the gap between Japanese hardware robotics and AI warehouse software.",fitClass:'bl'},
+  {name:'GreyOrange',hqJa:'\u30b0\u30eb\u30b0\u30e9\u30e0\uff0f\u30a2\u30c8\u30e9\u30f3\u30bf',hqEn:'Gurugram / Atlanta',avatar:'GO',bg:'#E6F1FB',tc:'#185FA5',priority:'a',
+   subJa:'AI\u30d5\u30eb\u30d5\u30a3\u30eb\u30e1\u30f3\u30c8',subEn:'AI-Driven Fulfillment',
+   revOku:220,evOku:2800,ebitda:'8%',
+   tags:['\u30d5\u30eb\u30d5\u30a3\u30eb\u30e1\u30f3\u30c8AI','SEA\u5009\u5eab','Enterprise SaaS','Series E'],
+   rationaleJa:'\u30b7\u30f3\u30ac\u30dd\u30fc\u30eb\u30fb\u97d3\u56fd\u3092\u542b\u3080\u30a2\u30b8\u30a255\u62e0\u70b9\u8d85\u306b\u5c0e\u5165\u3002SaaS\u30e2\u30c7\u30eb\u3067\u7d4c\u5e38\u53ce\u76ca\u304c\u5b89\u5b9a\u3002Tiger Global\u30fbMithril Capital\u51fa\u8cc7\u30012026\uff5e27\u5e74IPO\u5019\u88dc\u3067\u3042\u308a\u8cb7\u53ce\u7a93\u53e3\u304c\u6025\u9001\u306b\u7e2e\u5c0f\u3002',
+   rationaleEn:"Deployed in 55+ Asian fulfillment centers. Stable SaaS recurring revenue. Tiger Global-backed. IPO candidate 2026–27 — acquisition window narrowing fast.",
+   fitJa:'ASEAN\u5c55\u958b\u3092\u52a0\u901f\u3059\u308b\u65e5\u7cfb\u7269\u6d41\u4e8b\u696d\u8005\uff08\u30e4\u30de\u30c8\u30fb\u4f50\u5ddd\u30fb\u65e5\u672c\u901a\u904b\uff09\u306b\u5373\u6226\u529b\u3068\u306a\u308bAI\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002IPO\u524d\u306e\u6226\u7565\u7684\u8cb7\u53ce\u30bf\u30a4\u30df\u30f3\u30b0\u306f\u6b8b\u308a\u9650\u3089\u308c\u3066\u3044\u308b\u3002',
+   fitEn:"Ideal AI platform for Japanese logistics operators expanding ASEAN. Pre-IPO acquisition window is closing.",fitClass:'bl'},
+  {name:'Ati Motors',hqJa:'\u30d9\u30f3\u30ac\u30eb\u30fc\u30eb',hqEn:'Bengaluru',avatar:'AT',bg:'#E6F1FB',tc:'#185FA5',priority:'s',
+   subJa:'\u81ea\u5f8b\u8d70\u884c\u5de5\u5834\u642c\u9001\u30ed\u30dc\u30c3\u30c8',subEn:'Autonomous Factory Vehicles',
+   revOku:40,evOku:280,ebitda:'-4%',
+   tags:['\u5de5\u5834\u5185AMR','SG\u30d1\u30a4\u30ed\u30c3\u30c8','Series B','\u88fd\u9020\u696d\u7279\u5316'],
+   rationaleJa:'\u5009\u5eab\u8ee2\u7528\u578b\u3067\u306f\u306a\u304f\u88fd\u9020\u73fe\u5834\u5411\u3051\u306b\u8a2d\u8a08\u3055\u308c\u305f\u81ea\u5f8b\u8d70\u884c\u642c\u9001\u30ed\u30dc\u30c3\u30c8\u3002\u30b7\u30f3\u30ac\u30dd\u30fc\u30eb\u3067\u306e\u30d1\u30a4\u30ed\u30c3\u30c8\u7a3c\u50cd\u4e2d\u3002Series B\u6bb5\u968e\u3067\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u306f\u307e\u3060\u9b45\u529b\u7684\u3002Bosch\u3068Siemens India\u304c\u9867\u5ba2\u3002',
+   rationaleEn:"AMRs purpose-built for manufacturing shop floors — not warehouse conversions. Singapore pilot underway. Series B: valuation still attractive. Bosch and Siemens India as customers.",
+   fitJa:'ASEAN\u5de5\u5834\u81ea\u52d5\u5316\u30ed\u30fc\u30c9\u30de\u30c3\u30d7\u3078\u306e\u76f4\u63a5\u7d44\u307f\u8fbc\u307f\u304c\u53ef\u80fd\u3002\u30a8\u30f3\u30b8\u30cb\u30a2\u3092\u65e5\u672c\u672c\u793eR&D\u306b\u7d71\u5408\u3059\u308b\u30a2\u30af\u30cf\u30a4\u30e4\u30fc\u69cb\u9020\u3082\u6709\u52b9\u3002NEDO\u306e\u5171\u540c\u958b\u767a\u52a9\u6210\u91d1\u5bfe\u8c61\u3002',
+   fitEn:"Direct plug-in to ASEAN factory automation roadmap. Acqui-hire structure viable. NEDO co-development grant eligible.",fitClass:'bl'},
+  {name:'Gridbots Technologies',hqJa:'\u30a2\u30fc\u30e1\u30c0\u30d0\u30fc\u30c9',hqEn:'Ahmedabad',avatar:'GB',bg:'#E6F1FB',tc:'#185FA5',priority:'a',
+   subJa:'\u7523\u696d\u70b9\u691c\u30ed\u30dc\u30c6\u30a3\u30af\u30b9',subEn:'Industrial Inspection Robotics',
+   revOku:30,evOku:180,ebitda:'12%',
+   tags:['\u70b9\u691cAI','\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u30ed\u30dc\u30c3\u30c8','\u9632\u885b','\u30d3\u30b8\u30e7\u30f3AI'],
+   rationaleJa:'\u77f3\u6cb9\u30fb\u30ac\u30b9\u30fb\u9632\u885b\u30fb\u30a4\u30f3\u30d5\u30e9\u5411\u3051\u306eAI\u70b9\u691c\u30ed\u30dc\u30c3\u30c8\u5c02\u696d\u3002\u5f37\u56f3\u306aIP\u8cc7\u7523\u3092\u4fdd\u6709\u3002\u30d7\u30ed\u30e2\u30fc\u30bf\u30fc\u7d4c\u55b6\u306eSME\u306e\u305f\u3081\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u306f\u4f4e\u3044\u304c\u30ac\u30d0\u30ca\u30f3\u30b9\u306e\u30c7\u30e5\u30fc\u30c7\u30ea\u306f\u5fc5\u9808\u3002',
+   rationaleEn:"AI-powered inspection robots for oil & gas, defence and infrastructure. Strong IP portfolio. Promoter-controlled SME — governance diligence required.",
+   fitJa:'JGC\u30fb\u5343\u4ee3\u7530\u5316\u5de5\u30fbIHI\u306bASEAN\u306e\u77f3\u6cb9\u5316\u5b66\u30d7\u30e9\u30f3\u30c8\u30fb\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u70b9\u691c\u81ea\u52d5\u5316\u30e6\u30fc\u30b9\u30b1\u30fc\u30b9\u306b\u76f4\u7d50\u3002\u4f4e\u3044\u53d6\u5f97\u4fa1\u683c\u3067IP\u4fa1\u5024\u304c\u9ad8\u3044\u3002',
+   fitEn:"Direct use case for JGC, Chiyoda, IHI in ASEAN petrochemical plant inspection automation. Low acquisition price for high IP value.",fitClass:'bl'},
+  {name:'Systemantics',hqJa:'\u30d9\u30f3\u30ac\u30eb\u30fc\u30eb',hqEn:'Bengaluru',avatar:'SY',bg:'#E6F1FB',tc:'#185FA5',priority:'a',
+   subJa:'\u7523\u696d\u7528\u30ed\u30dc\u30c3\u30c8\u30a2\u30fc\u30e0',subEn:'Industrial Robot Arms',
+   revOku:20,evOku:120,ebitda:'9%',
+   tags:['6\u8ef8\u30ed\u30dc\u30c3\u30c8','SCARA','\u4e2d\u5c0f\u4f01\u696d','\u8f38\u51fa\u30d1\u30a4\u30ed\u30c3\u30c8'],
+   rationaleJa:'\u30a4\u30f3\u30c9\u3067\u6570\u5c11\u306a\u3044\u56fd\u7523\u7523\u696d\u7528\u30ed\u30dc\u30c3\u30c8\u30a2\u30fc\u30e0\u30e1\u30fc\u30ab\u30fc\u30026\u8ef8\u30fbSCARA\u306e\u88fd\u54c1\u30e9\u30a4\u30f3\u3092\u6301\u3064\u3002\u4e2d\u6771\u5411\u3051\u8f38\u51fa\u3092\u30d1\u30a4\u30ed\u30c3\u30c8\u4e2d\u3002\u898f\u6a21\u306f\u5c0f\u3055\u3044\u304c\u77e5\u7684\u8ca1\u7523\u3068\u53d6\u5f97\u30b3\u30b9\u30c8\u306e\u30d0\u30e9\u30f3\u30b9\u304c\u826f\u3044\u3002',
+   rationaleEn:"One of India's only indigenous industrial robot arm makers. 6-axis and SCARA product lines. Middle East export pilots underway. Strong IP-to-cost ratio.",
+   fitJa:'\u30d5\u30a1\u30ca\u30c3\u30af\u30fb\u5b89\u5ddd\u96fb\u6a5f\u30fb\u5ddd\u5d0e\u91cd\u5de5\u306a\u3069\u65e5\u7cfb\u30ed\u30dc\u30c3\u30c8\u30e1\u30fc\u30ab\u30fc\u304cASEAN\u5411\u3051\u30b3\u30b9\u30c8\u7af6\u4e89\u529b\u3042\u308b\u30ed\u30dc\u30c3\u30c8\u88fd\u9020\u57fa\u76e4\u3068\u3057\u3066\u30a4\u30f3\u30c9\u62e0\u70b9\u3092\u6c42\u3081\u308b\u5834\u5408\u306e\u6700\u6709\u529b\u30a2\u30af\u30cf\u30a4\u30e4\u30fc\u5019\u88dc\u3002',
+   fitEn:"Top acqui-hire candidate for Fanuc, Yaskawa, Kawasaki seeking cost-competitive India-based robot manufacturing for ASEAN.",fitClass:'bl'},
+  {name:'Sastra Robotics',hqJa:'\u30c8\u30ea\u30b7\u30e5\u30fc\u30eb\uff0f\u30d9\u30f3\u30ac\u30eb\u30fc\u30eb',hqEn:'Thrissur / Bengaluru',avatar:'SR',bg:'#E6F1FB',tc:'#185FA5',priority:'b',
+   subJa:'\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2\u30c6\u30b9\u30c8\u81ea\u52d5\u5316',subEn:'Hardware Test Automation',
+   revOku:10,evOku:60,ebitda:'5%',
+   tags:['\u30c6\u30b9\u30c8\u81ea\u52d5\u5316','IoT\u30ed\u30dc\u30c6\u30a3\u30af\u30b9','\u30b7\u30fc\u30c9\u6bb5\u968e','\u81ea\u52d5\u8eca'],
+   rationaleJa:'\u81ea\u52d5\u8eca\u30fb\u96fb\u5b50\u6a5f\u5668\u5411\u3051\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2\u30c6\u30b9\u30c8\u81ea\u52d5\u5316\u30ed\u30dc\u30c3\u30c8\u3002\u6280\u8853\u5dee\u5225\u5316\u306f\u3042\u308b\u304c\u898f\u6a21\u306f\u30b7\u30fc\u30c9\u6bb5\u968e\u3002\u30a4\u30f3\u30c9\u306e\u81ea\u52d5\u8eca\u30e1\u30fc\u30ab\u30fc\u304c\u9867\u5ba2\u3002',
+   rationaleEn:"Robotic test automation for automotive and electronics hardware. Technically differentiated but seed-stage. Indian automotive OEM customers.",
+   fitJa:'ASEAN\u306e\u751f\u7523\u30e9\u30a4\u30f3\u306b\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2\u30c6\u30b9\u30c8\u81ea\u52d5\u5316\u304c\u5fc5\u8981\u306a\u30c7\u30f3\u30bd\u30fc\u30fb\u30a2\u30a4\u30b7\u30f3\u7b49\u306e\u65e5\u7cfb\u81ea\u52d5\u8eca\u90e8\u54c1\u30e1\u30fc\u30ab\u30fc\u306b\u9069\u5408\u300240\u540d\u306e\u6df1\u6280\u8853\u30a8\u30f3\u30b8\u30cb\u30a2\u306e\u30a2\u30af\u30cf\u30a4\u30e4\u30fc\u4fa1\u5024\u3042\u308a\u3002',
+   fitEn:"Fits Denso, Aisin and others needing hardware test automation in ASEAN production lines. 40-person deep-tech team acqui-hire value.",fitClass:'bl'},
 ];
 
-/* State */
+// Pipeline data: sizes in oku-yen
+const pipelineRaw=[
+  [{name:'Indra Systems',oku:450,sector:'IT Services / IT\u30b5\u30fc\u30d3\u30b9'},{name:'GreenWatt Energy',oku:280,sector:'Renewable / \u518d\u30a8\u30cd'}],
+  [{name:'Medi-Core Pharma',oku:650,sector:'Pharma / \u88fd\u85ac'},{name:'FastTrack Logistics',oku:380,sector:'Logistics / \u7269\u6d41'},{name:'PixelForge AI',oku:220,sector:'IT Services / IT\u30b5\u30fc\u30d3\u30b9'}],
+  [{name:'Nexus Data Systems',oku:2200,sector:'IT Services / IT\u30b5\u30fc\u30d3\u30b9'},{name:'Arora Pharma Ltd',oku:950,sector:'Pharma / \u88fd\u85ac'}],
+  [{name:'PineFlow Payments',oku:620,sector:'Fintech'},{name:'Chakra Auto',oku:1400,sector:'Manufacturing / \u88fd\u9020\u696d'}],
+  [{name:'VelocityTech',oku:1800,sector:'IT Services / IT\u30b5\u30fc\u30d3\u30b9'}],
+];
+
+// Intel transactions: oku-yen
+const intelTxRaw=[
+  {nameJa:'\u65b0\u65e5\u672c\u88fd\u9244 \u00d7 \u30a8\u30c3\u30b5\u30fc\u30eb\u30fb\u30b9\u30c1\u30fc\u30eb',nameEn:'Nippon Steel \u00d7 ESSAR Steel',oku:6400,sector:'\u9244\u9271 / Steel'},
+  {nameJa:'\u30bd\u30d5\u30c8\u30d0\u30f3\u30af \u00d7 Paytm\uff08\u51fa\u8cc7\uff09',nameEn:'SoftBank \u00d7 Paytm stake',oku:1200,sector:'Fintech'},
+  {nameJa:'\u4e09\u4e95\u7269\u7523 \u00d7 ReNew Power',nameEn:'Mitsui \u00d7 ReNew Power',oku:850,sector:'\u518d\u30a8\u30cd / Renewable'},
+  {nameJa:'KDDI \u00d7 Jio\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u30ba',nameEn:'KDDI \u00d7 Jio Platforms',oku:400,sector:'\u901a\u4fe1 / Telecom'},
+  {nameJa:'\u4f4f\u53cb\u5546\u4e8b \u00d7 \u30ca\u30d3\u30e0\u30f3\u30d0\u30a4',nameEn:'Sumitomo \u00d7 Navi Mumbai',oku:550,sector:'\u30a4\u30f3\u30d5\u30e9 / Infra'},
+];
+
+/* ═══════════════ STATE ═══════════════ */
 let lang = 'ja';
 
-/* Render Cards */
+/* ═══════════════ RENDER ═══════════════ */
 function renderCards(targets, containerId) {
   const t = i18n[lang];
-  const pMap = t.pLabels;
   const pClass = {s:'p-s',a:'p-a',b:'p-b'};
   document.getElementById(containerId).innerHTML = targets.map(c => `
     <div class="card">
@@ -390,75 +491,172 @@ function renderCards(targets, containerId) {
           <div class="avatar" style="background:${c.bg};color:${c.tc}">${c.avatar}</div>
           <div>
             <div class="card-name">${c.name}</div>
-            <div class="card-sub">${lang==='ja'?c.subJa:c.subEn} · ${lang==='ja'?c.hqJa:c.hqEn}</div>
+            <div class="card-sub">${lang==='ja'?c.subJa:c.subEn} \u00b7 ${lang==='ja'?c.hqJa:c.hqEn}</div>
           </div>
         </div>
-        <span class="priority ${pClass[c.priority]}">${pMap[c.priority]}</span>
+        <span class="priority ${pClass[c.priority]}">${t.pLabels[c.priority]}</span>
       </div>
       <div class="mrow">
-        <div><div class="ml">${t.cardRevLabel}</div><div class="mv">${lang==='ja' ? c.revJa + ' (~' + c.revEn + ')' : c.revEn}</div></div>
-        <div><div class="ml">${t.cardEvLabel}</div><div class="mv">${lang==='ja' ? c.evJa + ' (~' + c.evEn + ')' : c.evEn}</div></div>
+        <div><div class="ml">${t.cardRevLabel}</div><div class="mv">${fmt(c.revOku)}</div></div>
+        <div><div class="ml">${t.cardEvLabel}</div><div class="mv">${fmt(c.evOku)}</div></div>
         <div><div class="ml">${t.cardEbitdaLabel}</div><div class="mv">${c.ebitda}</div></div>
       </div>
       <div class="tags">${c.tags.map(g=>`<span class="tag">${g}</span>`).join('')}</div>
       <div class="rationale">${lang==='ja'?c.rationaleJa:c.rationaleEn}</div>
       <div class="japan-fit ${c.fitClass}"><strong>${t.fitLabel}</strong>${lang==='ja'?c.fitJa:c.fitEn}</div>
       <div class="actions">
-        <button class="btn-card" onclick="alert('${c.name}: ${lang==='ja'?'詳細分析はYENS Capital LLCまでお問い合わせください。':'Please contact YENS Capital LLC for detailed analysis.'}')">${t.cardAnalyze}</button>
+        <button class="btn-card" onclick="alert('${c.name}: ${lang==='ja'?'\u8a73\u7d30\u5206\u6790\u306fYENS Capital LLC\u307e\u3067\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\u3002':'Please contact YENS Capital LLC for detailed analysis.'}')">${t.cardAnalyze}</button>
         <button class="btn-card dark">${t.cardAdd}</button>
       </div>
     </div>
   `).join('');
 }
 
-/* Render Pipeline */
+function renderMatrix(rowsKey, gridId) {
+  const t = i18n[lang];
+  const headers = t.matrixHeaders;
+  const rows = t[rowsKey];
+  const hiSet = new Set(['hi']);
+  let html = headers.map(h=>`<div class="mh">${h}</div>`).join('');
+  rows.forEach(row => {
+    // first 5 cells are display text, next 5 are class hints (hi/mid/lo)
+    for(let i=0;i<5;i++){
+      const cls = i===0 ? '' : (row[5+i]||'lo');
+      html += `<div class="mc ${cls}">${row[i]}</div>`;
+    }
+  });
+  document.getElementById(gridId).innerHTML = html;
+}
+
+function renderStructItems(key, id) {
+  document.getElementById(id).innerHTML = i18n[lang][key].map(s=>`<div class="struct-item">${s}</div>`).join('');
+}
+
 function renderPipeline() {
   const t = i18n[lang];
-  const cols = document.getElementById('pipeline-cols');
-  cols.innerHTML = t.pipelineStages.map((stage,i) => {
-    const deals = t.pipelineData[i] || [];
+  document.getElementById('pipeline-cols').innerHTML = t.pipelineStages.map((stage,i)=>{
+    const deals = pipelineRaw[i];
     return `<div class="pcol">
       <div class="pcol-head"><span>${stage}</span><span class="pcol-count">${deals.length}</span></div>
-      ${deals.map(d => {
-        let size = d.size;
-        if (lang === 'en') {
-          const match = d.size.match(/([0-9,]+)億/);
-          if (match) size = toUSD(match[1].replace(/,/g,''));
-        }
-        return `<div class="pdeal"><div class="pdeal-name">${d.name}</div><div class="pdeal-size">${size}</div><span class="pdeal-tag">${d.sector}</span></div>`;
-      }).join('')}
+      ${deals.map(d=>`<div class="pdeal">
+        <div class="pdeal-name">${d.name}</div>
+        <div class="pdeal-size">${fmt(d.oku)}</div>
+        <span class="pdeal-tag">${d.sector.split(' / ')[lang==='ja'?1:0]||d.sector}</span>
+      </div>`).join('')}
     </div>`;
   }).join('');
 }
 
-/* Update total deal value */
-function updateMetrics() {
-  const total = lang === 'ja' ? '¥2.4兆 (~$15.1B)' : '$15.1B';
-  document.getElementById('total-deal').textContent = total;
+function renderIntel() {
+  const t = i18n[lang];
+  const intelMacroJa=[
+    ['\u30a4\u30f3\u30c9GDP\u6210\u9577\u7387\uff08FY26\uff09','6.8%\uff08IMF\u63a8\u8a08\uff09'],
+    ['\u20b9/\u00a5 \u70ba\u66ff\u30ec\u30fc\u30c8','1.78\u5186/\u20b9'],
+    ['FDI\u81ea\u52d5\u627f\u8a8d\u4e0a\u9650','100%\uff08\u4e3b\u8981\u30bb\u30af\u30bf\u30fc\uff09'],
+    ['SEBI M&A\u5be9\u67fb\u671f\u9593','\u5e73\u5747 30\uff5e45\u65e5'],
+    ['JBIC\u878d\u8cc7\u30b5\u30dd\u30fc\u30c8','\u30a4\u30f3\u30c9\u6848\u4ef6\u5bfe\u5fdc\u53ef'],
+    ['\u30a4\u30f3\u30c9\u6cd5\u4eba\u7a0e\u7387','22%\uff08\u56fd\u5185\u6cd5\u4eba\uff09'],
+    ['\u65e5\u5370\u79df\u7a0e\u6761\u7d041989\u5e74\u767a\u52b9\u30fb\u73fe\u884c\u6709\u52b9','1989\u5e74\u767a\u52b9'],
+  ];
+  const intelMacroEn=[
+    ['India GDP Growth (FY26)','6.8% (IMF est.)'],
+    ['INR/JPY Exchange Rate','JPY 1.78 / INR'],
+    ['FDI Auto-Route Limit','100% (most sectors)'],
+    ['SEBI M&A Approval','30-45 days avg.'],
+    ['JBIC Financing','Available for India deals'],
+    ['India Corp Tax Rate','22% (domestic cos.)'],
+    ['Bilateral Tax Treaty','In force since 1989'],
+  ];
+  const intelMacro = lang==='ja' ? intelMacroJa : intelMacroEn;
+  const intelRationaleJa=[
+    ['\u5927\u624b\u88fd\u9020\u696d\uff08\u88fd\u9020\u696d\uff09','\u30b3\u30b9\u30c8\u7af6\u4e89\u529b\u306e\u3042\u308b\u30b5\u30d7\u30e9\u30a4\u30c1\u30a7\u30fc\u30f3\u30fb\u30a4\u30f3\u30c9\u5e02\u5834\u53c2\u5165'],
+    ['\u7dcf\u5408\u5546\u793e\uff08\u5546\u793e\uff09','\u5929\u7136\u8cc7\u6e90\u30fb\u7269\u6d41\u30b3\u30ea\u30c9\u30fc\u306e\u652f\u914d\u6a29\u78ba\u4fdd'],
+    ['\u91d1\u878d\u6a5f\u95a2','\u5bcc\u88d5\u5c64\u5411\u3051WM\u304a\u3088\u3073Fintech\u30d7\u30ec\u30a4'],
+    ['IT\u30d9\u30f3\u30c0\u30fc\u30fbSI\u30a2\u30fc','\u30a8\u30f3\u30b8\u30cb\u30a2\u4eba\u4ef6\u8cbb\u88c1\u5b9a\u30fbDX\u63a8\u9032'],
+    ['\u88fd\u85ac\u30fb\u30d8\u30eb\u30b9\u30b1\u30a2','CDMO\uff0fAPI\u8abf\u9054\u30fbPMDA\u85ac\u4e8b\u7d4c\u8def'],
+    ['PE\u30fbVC','\u30a4\u30f3\u30c9\u30c6\u30c3\u30af\u6210\u9577\u30fb\u73fe\u5730IPO\u51fa\u53e3\u6226\u7565'],
+  ];
+  const intelRationaleEn=[
+    ['Large Corp (Manufacturing)','Cost-competitive supply chain, India market access'],
+    ['Trading Co (Shosha)','Natural resource & logistics corridor control'],
+    ['Financial Institution','HNW wealth management & fintech plays'],
+    ['IT / Systems Integrator','Engineering talent arbitrage, DX'],
+    ['Pharma / Healthcare','CDMO / API sourcing, PMDA pathway'],
+    ['Private Equity / VC','India tech growth, IPO exit strategy'],
+  ];
+  const intelRationale = lang==='ja' ? intelRationaleJa : intelRationaleEn;
+  const intelSectorsJa=[
+    ['IT\u30b5\u30fc\u30d3\u30b9','18.4x',78],['\u88fd\u85ac\u30fbCDMO','16.2x',70],
+    ['Fintech','22.1x',95],['\u88fd\u9020\u696d','11.8x',51],['\u7269\u6d41','9.4x',41],['\u518d\u751f\u53ef\u80fd\u30a8\u30cd\u30eb\u30ae\u30fc','14.6x',63]
+  ];
+  const intelSectorsEn=[
+    ['IT Services','18.4x',78],['Pharma / CDMO','16.2x',70],
+    ['Fintech','22.1x',95],['Manufacturing','11.8x',51],['Logistics','9.4x',41],['Renewable Energy','14.6x',63]
+  ];
+  const intelSectors = lang==='ja' ? intelSectorsJa : intelSectorsEn;
+
+  document.getElementById('intel-grid').innerHTML = `
+    <div class="intel-card">
+      <div class="intel-title">${t.intelSectorTitle}</div>
+      ${intelSectors.map(([s,v,p])=>`<div class="bar-wrap"><div class="bar-label"><span>${s}</span><span>${v}</span></div><div class="bar-bg"><div class="bar-fill" style="width:${p}%"></div></div></div>`).join('')}
+    </div>
+    <div class="intel-card">
+      <div class="intel-title">${t.intelMacroTitle}</div>
+      ${intelMacro.map(([k,v])=>`<div class="intel-row"><span class="intel-key">${k}</span><span class="intel-val">${v}</span></div>`).join('')}
+    </div>
+    <div class="intel-card">
+      <div class="intel-title">${t.intelTxTitle}</div>
+      ${intelTxRaw.map(d=>`<div class="intel-row" style="gap:8px">
+        <span class="intel-key" style="flex:1">${lang==='ja'?d.nameJa:d.nameEn}</span>
+        <span class="tag">${d.sector.split(' / ')[lang==='ja'?1:0]||d.sector}</span>
+        <span class="intel-val" style="min-width:60px;text-align:right">${fmt(d.oku)}</span>
+      </div>`).join('')}
+    </div>
+    <div class="intel-card">
+      <div class="intel-title">${t.intelRationaleTitle}</div>
+      ${intelRationale.map(([k,v])=>`<div class="intel-row" style="align-items:flex-start;gap:8px">
+        <span class="intel-key" style="min-width:120px;flex-shrink:0;font-weight:500">${k}</span>
+        <span style="font-size:11px;color:var(--text2);text-align:right">${v}</span>
+      </div>`).join('')}
+    </div>`;
 }
 
-/* Apply translations and render */
 function applyI18n() {
   const t = i18n[lang];
-  // Update all static texts (nav, tabs, labels, etc.) - keep your original applyI18n logic here
   document.getElementById('nav-sub').textContent = t.navSub;
   document.getElementById('nav-contact').textContent = t.navContact;
   document.getElementById('nav-login').textContent = t.navLogin;
-  // ... (add all your other document.getElementById updates from original script)
-
+  document.getElementById('fx-note').textContent = t.fxNote;
+  ['m1l','m1d','m2l','m2d','m3l','m3d','m4l','m4d'].forEach(id=>document.getElementById(id).textContent=t[id]);
+  // Total deal value: 2.4T yen = 24,000 oku => in USD = 24000*1e8/158 = ~$15.2B
+  document.getElementById('m2v').textContent = lang==='ja' ? '\u00a524,000\u5104' : '$15.2B';
+  document.getElementById('tab-btn-targets').textContent = t.tabTargets;
+  document.getElementById('tab-btn-pipeline').textContent = t.tabPipeline;
+  document.getElementById('tab-btn-intel').textContent = t.tabIntel;
+  document.getElementById('th1-label').textContent = t.th1Label;
+  document.getElementById('th1-count').textContent = t.th1Count;
+  document.getElementById('th2-label').textContent = t.th2Label;
+  document.getElementById('th2-count').textContent = t.th2Count;
+  ['cand-title','cand-title-b'].forEach(id=>document.getElementById(id).textContent=t.candTitle);
+  ['pk-s-lbl','pk-s-lbl-b'].forEach(id=>document.getElementById(id).textContent=t.pkS);
+  ['pk-a-lbl','pk-a-lbl-b'].forEach(id=>document.getElementById(id).textContent=t.pkA);
+  ['pk-b-lbl','pk-b-lbl-b'].forEach(id=>document.getElementById(id).textContent=t.pkB);
+  document.getElementById('gmatrix-title').textContent = t.gMatrixTitle;
+  document.getElementById('bmatrix-title').textContent = t.bMatrixTitle;
+  document.getElementById('gstruct-title').textContent = t.gStructTitle;
+  document.getElementById('bstruct-title').textContent = t.bStructTitle;
+  document.getElementById('footer-text').textContent = t.footer;
   document.documentElement.lang = lang;
-  renderCards(greenTargets, 'green-cards');
-  renderCards(blueTargets, 'blue-cards');
-  renderMatrix('gMatrixData','gmatrix-grid'); // keep your original matrix function
-  renderMatrix('bMatrixData','bmatrix-grid');
+  renderCards(greenTargets,'green-cards');
+  renderCards(blueTargets,'blue-cards');
+  renderMatrix('gMatrixRows','gmatrix-grid');
+  renderMatrix('bMatrixRows','bmatrix-grid');
   renderStructItems('gStructItems','gstruct-items');
   renderStructItems('bStructItems','bstruct-items');
   renderPipeline();
-  renderIntel(); // keep your original intel function
-  updateMetrics();
+  renderIntel();
 }
 
-/* Controls */
 function setLang(l) {
   lang = l;
   document.getElementById('btn-en').classList.toggle('active', l==='en');
@@ -473,15 +671,14 @@ function switchMainTab(tab, btn) {
 }
 
 function switchTheme(theme, btn) {
-  document.getElementById('tbtn-green').classList.toggle('ag', theme==='green');
-  document.getElementById('tbtn-blue').classList.toggle('ab', theme==='blue');
-  document.getElementById('pane-green').classList.toggle('hidden', theme!=='green');
-  document.getElementById('pane-blue').classList.toggle('hidden', theme!=='blue');
+  document.getElementById('tbtn-green').classList.toggle('ag',theme==='green');
+  document.getElementById('tbtn-green').classList.toggle('ab',false);
+  document.getElementById('tbtn-blue').classList.toggle('ab',theme==='blue');
+  document.getElementById('tbtn-blue').classList.toggle('ag',false);
+  document.getElementById('pane-green').classList.toggle('hidden',theme!=='green');
+  document.getElementById('pane-blue').classList.toggle('hidden',theme!=='blue');
 }
 
-/* Keep your original renderMatrix, renderStructItems, renderIntel functions here */
-
-/* INIT */
 applyI18n();
 </script>
 </body>
