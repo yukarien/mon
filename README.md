@@ -1,2 +1,2 @@
 # mon
-M&amp;A Japan &amp; 
+M&amp;A Japan & overseas investors; 
