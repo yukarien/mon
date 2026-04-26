@@ -1,2 +1,2 @@
 # mon
-M&amp;A Japan &amp; India
+M&amp;A Japan &amp; 
