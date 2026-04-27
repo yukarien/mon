@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon — Japan SME × Global M&A Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #faf8f4; --ink: #1c1917; --ink-2: #44403c; --ink-3: #78716c;
+    --gold: #b5883e; --gold-2: #d4aa60; --gold-bg: #fdf8ef; --rust: #92400e;
+    --border: #e7e2d9; --bg-subtle: #f5f0e8; --white: #ffffff;
+  }
+  html { font-size: 13px; }
+  body { background: var(--cream); color: var(--ink); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  /* TOPBAR */
+  .topbar { background: var(--ink); padding: 0 1.75rem; height: 32px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-left { font-size: 0.68rem; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
+  .topbar-right { display: flex; align-items: center; gap: 1rem; }
+  .live-pill { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(74,222,128,0.15); color: #4ade80; font-size: 0.6rem; padding: 0.18rem 0.55rem; border-radius: 20px; letter-spacing: 0.06em; font-weight: 500; }
+  .live-dot { width: 5px; height: 5px; background: #4ade80; border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .lang-btn { font-size: 0.65rem; color: rgba(255,255,255,0.45); cursor: pointer; letter-spacing: 0.05em; padding: 0.2rem 0.5rem; border-radius: 3px; border: 1px solid transparent; transition: all 0.15s; }
+  .lang-btn.active { color: var(--gold); border-color: rgba(181,136,62,0.4); }
+  .lang-btn:hover { color: rgba(255,255,255,0.8); }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 200; background: rgba(250,248,244,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 1.75rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { display: flex; align-items: center; gap: 0.6rem; }
+  .brand-kanji { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 300; color: var(--gold); line-height: 1; }
+  .brand-wordmark { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; letter-spacing: 0.18em; color: var(--ink); }
+  .brand-sep { width: 1px; height: 16px; background: var(--border); margin: 0 0.1rem; }
+  .brand-tagline { font-size: 0.65rem; color: var(--ink-3); letter-spacing: 0.03em; line-height: 1.3; }
+  .nav-right { display: flex; align-items: center; gap: 0.9rem; }
+  .nav-fy { font-size: 0.65rem; color: var(--ink-3); }
+  .btn-cta { background: var(--gold); color: white; border: none; padding: 0.38rem 1.1rem; font-size: 0.7rem; font-family: 'Noto Sans JP', sans-serif; border-radius: 3px; cursor: pointer; transition: background 0.18s; }
+  .btn-cta:hover { background: var(--gold-2); }
+
+  /* HERO */
+  .hero { padding: 2.25rem 1.75rem 0; max-width: 1140px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; font-family: 'Cormorant Garamond', serif; margin-bottom: 0.35rem; }
+  .hero-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.45rem, 2.8vw, 2rem); font-weight: 300; line-height: 1.5; margin-bottom: 0.5rem; }
+  .hero-h1 em { font-style: normal; color: var(--gold); }
+  .hero-sub { font-size: 0.76rem; color: var(--ink-2); max-width: 560px; line-height: 1.85; margin-bottom: 1.4rem; }
+
+  /* STATS BAR */
+  .stats-bar { display: flex; border: 1px solid var(--border); border-radius: 5px; overflow: hidden; background: var(--white); }
+  .stat-cell { flex: 1; padding: 0.8rem 1.1rem; border-right: 1px solid var(--border); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; line-height: 1; margin-bottom: 0.12rem; color: var(--ink); }
+  .stat-n .unit { color: var(--gold); font-size: 1.2rem; }
+  .stat-lbl { font-size: 0.6rem; color: var(--ink-3); letter-spacing: 0.04em; }
+
+  /* BUFFETT STRIP */
+  .buffett-strip { background: linear-gradient(135deg, #1c1917 0%, #292524 55%, #1c1917 100%); padding: 1.4rem 1.75rem; margin-top: 1.4rem; position: relative; overflow: hidden; }
+  .buffett-strip::after { content: '継'; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); font-family: 'Noto Serif JP', serif; font-size: 5.5rem; font-weight: 300; color: rgba(181,136,62,0.06); line-height: 1; pointer-events: none; }
+  .buffett-inner { max-width: 1140px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; }
+  .buffett-q-mark { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold); line-height: 0.7; flex-shrink: 0; }
+  .buffett-body { flex: 1; }
+  .buffett-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(0.88rem, 1.5vw, 1.05rem); font-style: italic; font-weight: 300; color: #f5f0e8; line-height: 1.7; margin-bottom: 0.4rem; }
+  .buffett-quote b { font-style: normal; color: var(--gold-2); font-weight: 400; }
+  .buffett-source { font-size: 0.6rem; color: rgba(245,240,232,0.38); letter-spacing: 0.1em; text-transform: uppercase; }
+  .buffett-source span { color: var(--gold); }
+
+  /* STEWARDSHIP */
+  .stewardship { background: var(--gold); padding: 0.5rem 1.75rem; }
+  .stewardship-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; gap: 0.65rem; }
+  .s-label { font-family: 'Cormorant Garamond', serif; font-size: 0.65rem; font-weight: 600; color: white; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+  .s-div { width: 1px; height: 0.9rem; background: rgba(255,255,255,0.35); }
+  .s-text { font-size: 0.67rem; color: rgba(255,255,255,0.9); line-height: 1.5; }
+
+  /* MAIN */
+  .main { max-width: 1140px; margin: 0 auto; padding: 1.5rem 1.75rem 2rem; }
+
+  /* TABS */
+  .tab-row { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.1rem; }
+  .tab { padding: 0.55rem 1.1rem; font-size: 0.72rem; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; background: none; border: none; cursor: pointer; color: var(--ink-3); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.14s; white-space: nowrap; }
+  .tab:hover { color: var(--ink-2); }
+  .tab.on { color: var(--ink); border-bottom-color: var(--gold); font-weight: 400; }
+  .tab-count { display: inline-block; background: var(--bg-subtle); color: var(--ink-3); font-size: 0.58rem; padding: 0.05rem 0.3rem; border-radius: 2px; margin-left: 0.22rem; }
+
+  /* PANEL */
+  .panel { display: none; }
+  .panel.on { display: block; }
+
+  /* FILTER */
+  .filter-bar { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+  .f-label { font-size: 0.67rem; color: var(--ink-3); }
+  .f-select { padding: 0.24rem 0.55rem; border: 1px solid var(--border); border-radius: 3px; background: white; font-family: 'Noto Sans JP', sans-serif; font-size: 0.67rem; color: var(--ink); cursor: pointer; }
+  .f-total { margin-left: auto; font-size: 0.63rem; color: var(--ink-3); }
+
+  /* TABLE */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 0.71rem; }
+  .tbl th { text-align: left; padding: 0.42rem 0.7rem; font-weight: 400; font-size: 0.61rem; color: var(--ink-3); letter-spacing: 0.04em; border-bottom: 1px solid var(--border); background: var(--bg-subtle); white-space: nowrap; }
+  .tbl td { padding: 0.52rem 0.7rem; border-bottom: 1px solid #ede8df; vertical-align: middle; }
+  .tbl tr:hover td { background: #fdfaf5; }
+  .tbl .num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--ink-2); }
+  .tbl .ev { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; }
+  .tbl .rn { font-size: 0.58rem; color: #c4bdb4; }
+  .tbl .co { font-size: 0.71rem; font-weight: 400; }
+  .badge { display: inline-flex; align-items: center; font-size: 0.6rem; padding: 0.14rem 0.38rem; border-radius: 2px; white-space: nowrap; }
+  .badge-ind { background: #ecf4ec; color: #2d5a2d; }
+  .badge-svc { background: #eef0f8; color: #1e3a8a; }
+  .badge-it  { background: #eef6fb; color: #075985; }
+  .badge-hc  { background: #fdf4ff; color: #7e22ce; }
+  .badge-con { background: #fef9ec; color: #713f12; }
+  .badge-dist{ background: #f0fdf4; color: #14532d; }
+  .badge-food{ background: #fff7ed; color: #9a3412; }
+  .dot-s { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .g { background: #22c55e; } .a { background: #f59e0b; } .b { background: #3b82f6; }
+  .status { display: inline-flex; align-items: center; gap: 0.28rem; font-size: 0.65rem; white-space: nowrap; }
+  .pbar-wrap { background: #e5ddd0; border-radius: 2px; height: 4px; width: 80px; }
+  .pbar { height: 100%; border-radius: 2px; background: var(--gold); }
+
+  /* INTEL */
+  .intel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+  .intel-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.1rem; }
+  .intel-card h4 { font-family: 'Noto Serif JP', serif; font-size: 0.82rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .intel-card p { font-size: 0.7rem; color: var(--ink-2); line-height: 1.75; }
+  .intel-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.15rem; }
+
+  /* BOTTOM STATS */
+  .bottom-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.4rem; }
+  .bstat { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1rem 1.1rem; }
+  .bstat-label { font-size: 0.62rem; color: var(--ink-3); margin-bottom: 0.3rem; }
+  .bstat-n { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--ink); line-height: 1; }
+  .bstat-n .u { color: var(--gold); }
+  .bstat-sub { font-size: 0.6rem; color: var(--ink-3); margin-top: 0.15rem; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 0.9rem 1.75rem; background: var(--cream); }
+  .footer-in { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+  .footer-left { font-size: 0.63rem; color: var(--ink-3); }
+  .footer-right { font-size: 0.58rem; color: #b5aea6; font-style: italic; max-width: 360px; text-align: right; }
+
+  @media (max-width: 640px) {
+    .topbar, nav, .hero, .buffett-strip, .stewardship, .main, footer { padding-left: 1rem; padding-right: 1rem; }
+    .buffett-strip::after { display: none; }
+    .bottom-stats { grid-template-columns: 1fr; }
+    .brand-tagline, .brand-sep { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-left" data-ja="日本中小企業 × 海外バイヤー M&Aプラットフォーム" data-en="Japan SME × Global Buyer M&A Platform">日本中小企業 × 海外バイヤー M&Aプラットフォーム</span>
+  <div class="topbar-right">
+    <span class="live-pill"><span class="live-dot"></span>Live</span>
+    <span class="lang-btn active" id="btn-ja" onclick="setLang('ja')">JA</span>
+    <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="brand-kanji">門</span>
+    <span class="brand-wordmark">Mon</span>
+    <span class="brand-sep"></span>
+    <span class="brand-tagline" data-ja="日本中小企業 × 海外バイヤー<br>M&Aプラットフォーム" data-en="Japan SME × Global Buyer<br>M&A Platform">日本中小企業 × 海外バイヤー<br>M&Aプラットフォーム</span>
+  </div>
+  <div class="nav-right">
+    <span class="nav-fy">FY2026</span>
+    <button class="btn-cta" data-ja="案件を登録する" data-en="Register a Deal">案件を登録する</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="background:var(--cream);padding-bottom:0">
+  <div class="hero">
+    <p class="hero-eyebrow">Japan SME × Global Capital</p>
+    <h1 class="hero-h1">
+      <span data-ja="後継者不在の日本企業を<br>" data-en="Connecting Japan's businesses<br>">後継者不在の日本企業を<br></span><em data-ja="海外の成長資本" data-en="with global growth capital">海外の成長資本</em><span data-ja="へ繋ぐ" data-en=""></span>
+    </h1>
+    <p class="hero-sub" data-ja="EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング。YENS Capital LLC が仲介します。" data-en="Specializing in deals with EV ¥500M–¥2B. Instant matching with strategic buyers in India, Singapore, Hong Kong & UAE. Intermediated by YENS Capital LLC.">EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング。YENS Capital LLC が仲介します。</p>
+    <div class="stats-bar">
+      <div class="stat-cell"><div class="stat-n">38</div><div class="stat-lbl" data-ja="売り手企業" data-en="Seller Companies">売り手企業</div></div>
+      <div class="stat-cell"><div class="stat-n">24</div><div class="stat-lbl" data-ja="海外バイヤー" data-en="Global Buyers">海外バイヤー</div></div>
+      <div class="stat-cell"><div class="stat-n"><span class="unit">¥</span>5〜20<span class="unit" style="font-size:1rem">億</span></div><div class="stat-lbl" data-ja="対象EV" data-en="Target EV">対象EV</div></div>
+      <div class="stat-cell"><div class="stat-n">1<span class="unit">%</span></div><div class="stat-lbl" data-ja="成功報酬" data-en="Success Fee">成功報酬</div></div>
+      <div class="stat-cell"><div class="stat-n">12</div><div class="stat-lbl" data-ja="進行中ディール" data-en="Active Deals">進行中ディール</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUFFETT STRIP -->
+<div class="buffett-strip">
+  <div class="buffett-inner">
+    <div class="buffett-q-mark">"</div>
+    <div class="buffett-body">
+      <p class="buffett-quote" data-ja="売値より、<b>誰に継がせるか</b>。Warren Buffett が説いたように、真の買い手とは<b>価格ではなく永続</b>を約束する者です。Mon は、文化と雇用を守るバイヤーだけを日本の中小企業に繋ぎます。" data-en="Not <b>how much</b>, but <b>who will carry it forward</b>. As Warren Buffett has shown, the right buyer is one who pledges <b>permanence, not just price</b>. Mon connects Japan's SMEs only with buyers who protect their culture and people.">売値より、<b>誰に継がせるか</b>。Warren Buffett が説いたように、真の買い手とは<b>価格ではなく永続</b>を約束する者です。Mon は、文化と雇用を守るバイヤーだけを日本の中小企業に繋ぎます。</p>
+      <p class="buffett-source">Inspired by <span>Warren Buffett</span> · Berkshire Hathaway Philosophy</p>
+    </div>
+  </div>
+</div>
+
+<!-- STEWARDSHIP -->
+<div class="stewardship">
+  <div class="stewardship-inner">
+    <span class="s-label">Stewardship</span>
+    <div class="s-div"></div>
+    <p class="s-text" data-ja="Stewardship（事業継承責任）とは、利益最大化より企業の文化・雇用・地域への貢献を守ることを買収の第一義とするBuffett哲学であり、Monはこの基準を満たす海外投資家のみを厳選します。" data-en="Stewardship means placing the protection of a company's culture, people, and community above profit maximization — the core of Buffett's philosophy. Mon screens every buyer against this standard.">Stewardship（事業継承責任）とは、利益最大化より企業の文化・雇用・地域への貢献を守ることを買収の第一義とするBuffett哲学であり、Monはこの基準を満たす海外投資家のみを厳選します。</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="tab-row">
+    <button class="tab on" data-p="sellers" data-ja="売り手企業" data-en="Sellers">売り手企業 <span class="tab-count">38</span></button>
+    <button class="tab" data-p="buyers" data-ja="海外バイヤー" data-en="Buyers">海外バイヤー <span class="tab-count">24</span></button>
+    <button class="tab" data-p="pipeline" data-ja="ディールパイプライン" data-en="Pipeline">ディールパイプライン <span class="tab-count">12</span></button>
+    <button class="tab" data-p="intel" data-ja="市場インテリジェンス" data-en="Market Intel">市場インテリジェンス</button>
+  </div>
+
+  <!-- SELLERS -->
+  <div class="panel on" id="p-sellers">
+    <div class="filter-bar">
+      <span class="f-label" data-ja="業種：" data-en="Sector:">業種：</span>
+      <select class="f-select">
+        <option data-ja="すべて" data-en="All">すべて</option>
+        <option data-ja="製造業" data-en="Manufacturing">製造業</option>
+        <option data-ja="食品・農業" data-en="Food & Agri">食品・農業</option>
+        <option data-ja="IT・ソフトウェア" data-en="IT / Software">IT・ソフトウェア</option>
+        <option data-ja="ヘルスケア" data-en="Healthcare">ヘルスケア</option>
+        <option data-ja="建設・土木" data-en="Construction">建設・土木</option>
+        <option data-ja="流通・小売" data-en="Logistics / Retail">流通・小売</option>
+        <option data-ja="サービス" data-en="Services">サービス</option>
+      </select>
+      <span class="f-label" data-ja="エリア：" data-en="Region:">エリア：</span>
+      <select class="f-select">
+        <option data-ja="すべて" data-en="All">すべて</option>
+        <option data-ja="関東" data-en="Kanto">関東</option>
+        <option data-ja="関西" data-en="Kansai">関西</option>
+        <option data-ja="中部" data-en="Chubu">中部</option>
+        <option data-ja="九州" data-en="Kyushu">九州</option>
+        <option data-ja="北海道・東北" data-en="Hokkaido / Tohoku">北海道・東北</option>
+      </select>
+      <span class="f-total" data-ja="売却希望企業｜38社中 10社を表示" data-en="Seller companies — showing 10 of 38">売却希望企業｜38社中 10社を表示</span>
+    </div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-ja="企業名" data-en="Company">企業名</th>
+          <th data-ja="業種" data-en="Sector">業種</th>
+          <th data-ja="売上高" data-en="Revenue">売上高</th>
+          <th>EBITDA</th>
+          <th data-ja="EV想定" data-en="Est. EV">EV想定</th>
+          <th data-ja="所在地" data-en="Location">所在地</th>
+          <th data-ja="設立" data-en="Founded">設立</th>
+          <th data-ja="従業員" data-en="Staff">従業員</th>
+          <th data-ja="ステータス" data-en="Status">ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rn">001</td><td class="co">Tokai Precision Mfg.</td><td><span class="badge badge-ind" data-ja="製造業" data-en="Manufacturing">製造業</span></td><td class="num">¥420M</td><td class="num">¥80M</td><td class="ev">¥750M</td><td data-ja="愛知県" data-en="Aichi">愛知県</td><td>1978</td><td>42</td><td><span class="status"><span class="dot-s g"></span><span data-ja="受付中" data-en="Open">受付中</span></span></td></tr>
+        <tr><td class="rn">002</td><td class="co">Hokkaido Grand Foods</td><td><span class="badge badge-food" data-ja="食品・農業" data-en="Food & Agri">食品・農業</span></td><td class="num">¥710M</td><td class="num">¥140M</td><td class="ev">¥1.2B</td><td data-ja="北海道" data-en="Hokkaido">北海道</td><td>1985</td><td>68</td><td><span class="status"><span class="dot-s a"></span><span data-ja="交渉中" data-en="Negotiating">交渉中</span></span></td></tr>
+        <tr><td class="rn">003</td><td class="co">SkyLink Technologies</td><td><span class="badge badge-it" data-ja="IT・ソフトウェア" data-en="IT / Software">IT・ソフトウェア</span></td><td class="num">¥980M</td><td class="num">¥210M</td><td class="ev">¥1.8B</td><td data-ja="東京都" data-en="Tokyo">東京都</td><td>2003</td><td>31</td><td><span class="status"><span class="dot-s g"></span><span data-ja="受付中" data-en="Open">受付中</span></span></td></tr>
+        <tr><td class="rn">004</td><td class="co">Kansai Bridge Construction</td><td><span class="badge badge-con" data-ja="建設・土木" data-en="Construction">建設・土木</span></td><td class="num">¥350M</td><td class="num">¥60M</td><td class="ev">¥600M</td><td data-ja="大阪府" data-en="Osaka">大阪府</td><td>1969</td><td>55</td><td><span class="status"><span class="dot-s g"></span><span data-ja="受付中" data-en="Open">受付中</span></span></td></tr>
+        <tr><td class="rn">005</td><td class="co">Kyushu Medical Services</td><td><span class="badge badge-hc" data-ja="ヘルスケア" data-en="Healthcare">ヘルスケア</span></td><td class="num">¥830M</td><td class="num">¥170M</td><td class="ev">¥1.5B</td><td data-ja="福岡県" data-en="Fukuoka">福岡県</td><td>1992</td><td>89</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD実施中" data-en="Due Diligence">DD実施中</span></span></td></tr>
+        <tr><td class="rn">006</td><td class="co">Sanyo Logistics Co.</td><td><span class="badge badge-dist" data-ja="流通・小売" data-en="Logistics">流通・小売</span></td><td class="num">¥560M</td><td class="num">¥90M</td><td class="ev">¥800M</td><td data-ja="岡山県" data-en="Okayama">岡山県</td><td>1981</td><td>74</td><td><span class="status"><span class="dot-s g"></span><span data-ja="受付中" data-en="Open">受付中</span></span></td></tr>
+        <tr><td class="rn">007</td><td class="co">Michinoku Agri Machinery</td><td><span class="badge badge-ind" data-ja="製造業" data-en="Manufacturing">製造業</span></td><td class="num">¥290M</td><td class="num">¥50M</td><td class="ev">¥550M</td><td data-ja="岩手県" data-en="Iwate">岩手県</td><td>1973</td><td>28</td><td><span class="status"><span class="dot-s a"></span><span data-ja="交渉中" data-en="Negotiating">交渉中</span></span></td></tr>
+        <tr><td class="rn">008</td><td class="co">Aquamarine Fisheries</td><td><span class="badge badge-food" data-ja="食品・農業" data-en="Food & Agri">食品・農業</span></td><td class="num">¥640M</td><td class="num">¥110M</td><td class="ev">¥1.0B</td><td data-ja="長崎県" data-en="Nagasaki">長崎県</td><td>1967</td><td>112</td><td><span class="status"><span class="dot-s g"></span><span data-ja="受付中" data-en="Open">受付中</span></span></td></tr>
+        <tr><td class="rn">009</td><td class="co">Metro Care Services</td><td><span class="badge badge-svc" data-ja="サービス" data-en="Services">サービス</span></td><td class="num">¥480M</td><td class="num">¥70M</td><td class="ev">¥900M</td><td data-ja="埼玉県" data-en="Saitama">埼玉県</td><td>1998</td><td>145</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD実施中" data-en="Due Diligence">DD実施中</span></span></td></tr>
+        <tr><td class="rn">010</td><td class="co">Shinshu Precision Parts</td><td><span class="badge badge-ind" data-ja="製造業" data-en="Manufacturing">製造業</span></td><td class="num">¥1.12B</td><td class="num">¥240M</td><td class="ev">¥2.0B</td><td data-ja="長野県" data-en="Nagano">長野県</td><td>1962</td><td>187</td><td><span class="status"><span class="dot-s a"></span><span data-ja="最終条件調整" data-en="Final Terms">最終条件調整</span></span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.6rem;color:#c4bdb4;margin-top:0.6rem;text-align:right" data-ja="残り28社の閲覧は登録後に可能です（デモデータ）" data-en="28 more companies visible after registration (demo data)">残り28社の閲覧は登録後に可能です（デモデータ）</p>
+  </div>
+
+  <!-- BUYERS -->
+  <div class="panel" id="p-buyers">
+    <div class="filter-bar">
+      <span class="f-label" data-ja="国・地域：" data-en="Country:">国・地域：</span>
+      <select class="f-select">
+        <option data-ja="すべて" data-en="All">すべて</option>
+        <option>🇮🇳 India</option><option>🇸🇬 Singapore</option>
+        <option>🇭🇰 Hong Kong</option><option>🇦🇪 UAE</option><option>🇹🇼 Taiwan</option>
+      </select>
+      <span class="f-label" data-ja="セクター：" data-en="Sector:">セクター：</span>
+      <select class="f-select">
+        <option data-ja="すべて" data-en="All">すべて</option>
+        <option data-ja="製造業" data-en="Manufacturing">製造業</option>
+        <option data-ja="食品・農業" data-en="Food & Agri">食品・農業</option>
+        <option data-ja="IT・ヘルスケア" data-en="IT / Healthcare">IT・ヘルスケア</option>
+        <option data-ja="流通・サービス" data-en="Logistics / Services">流通・サービス</option>
+      </select>
+      <span class="f-total" data-ja="登録バイヤー｜24社中 8社を表示" data-en="Registered buyers — showing 8 of 24">登録バイヤー｜24社中 8社を表示</span>
+    </div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-ja="バイヤー名" data-en="Buyer">バイヤー名</th>
+          <th data-ja="国・地域" data-en="Country">国・地域</th>
+          <th data-ja="セクター" data-en="Sector">セクター</th>
+          <th data-ja="投資規模" data-en="Fund Size">投資規模</th>
+          <th data-ja="希望EV" data-en="Target EV">希望EV</th>
+          <th data-ja="承継スタイル" data-en="Deal Type">承継スタイル</th>
+          <th data-ja="ステータス" data-en="Status">ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rn">B01</td><td class="co">Tata Industrial Ventures</td><td>🇮🇳 India</td><td><span class="badge badge-ind">Manufacturing</span></td><td class="num">$50M</td><td class="ev">¥500M–1.5B</td><td data-ja="完全買収" data-en="Full Acquisition">完全買収</td><td><span class="status"><span class="dot-s g"></span><span data-ja="アクティブ" data-en="Active">アクティブ</span></span></td></tr>
+        <tr><td class="rn">B02</td><td class="co">Meridian Capital Singapore</td><td>🇸🇬 Singapore</td><td><span class="badge badge-it">IT / Healthcare</span></td><td class="num">$30M</td><td class="ev">¥800M–2.0B</td><td data-ja="戦略的提携" data-en="Strategic Alliance">戦略的提携</td><td><span class="status"><span class="dot-s g"></span><span data-ja="アクティブ" data-en="Active">アクティブ</span></span></td></tr>
+        <tr><td class="rn">B03</td><td class="co">Pearl River Holdings HK</td><td>🇭🇰 Hong Kong</td><td><span class="badge badge-food">Food / Logistics</span></td><td class="num">$25M</td><td class="ev">¥600M–1.2B</td><td data-ja="完全買収" data-en="Full Acquisition">完全買収</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD中" data-en="Due Diligence">DD中</span></span></td></tr>
+        <tr><td class="rn">B04</td><td class="co">Al Noor Investment Group</td><td>🇦🇪 UAE</td><td><span class="badge badge-con">Mfg / Construction</span></td><td class="num">$80M</td><td class="ev">¥1.0B–2.0B</td><td data-ja="MBO支援" data-en="MBO Support">MBO支援</td><td><span class="status"><span class="dot-s g"></span><span data-ja="アクティブ" data-en="Active">アクティブ</span></span></td></tr>
+        <tr><td class="rn">B05</td><td class="co">Formosa Strategic Partners</td><td>🇹🇼 Taiwan</td><td><span class="badge badge-it">IT / Manufacturing</span></td><td class="num">$40M</td><td class="ev">¥500M–1.8B</td><td data-ja="一部売却" data-en="Partial Sale">一部売却</td><td><span class="status"><span class="dot-s a"></span><span data-ja="交渉中" data-en="Negotiating">交渉中</span></span></td></tr>
+        <tr><td class="rn">B06</td><td class="co">Rajasthan Agri Tech Ltd</td><td>🇮🇳 India</td><td><span class="badge badge-food">Food & Agri</span></td><td class="num">$20M</td><td class="ev">¥500M–1.0B</td><td data-ja="合弁会社" data-en="Joint Venture">合弁会社</td><td><span class="status"><span class="dot-s g"></span><span data-ja="アクティブ" data-en="Active">アクティブ</span></span></td></tr>
+        <tr><td class="rn">B07</td><td class="co">Lion City Healthcare Fund</td><td>🇸🇬 Singapore</td><td><span class="badge badge-hc">Healthcare</span></td><td class="num">$60M</td><td class="ev">¥1.0B–2.0B</td><td data-ja="完全買収" data-en="Full Acquisition">完全買収</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD中" data-en="Due Diligence">DD中</span></span></td></tr>
+        <tr><td class="rn">B08</td><td class="co">Gulf Bridge Capital</td><td>🇦🇪 UAE</td><td><span class="badge badge-dist">Logistics / Services</span></td><td class="num">$35M</td><td class="ev">¥700M–1.5B</td><td data-ja="戦略的提携" data-en="Strategic Alliance">戦略的提携</td><td><span class="status"><span class="dot-s g"></span><span data-ja="アクティブ" data-en="Active">アクティブ</span></span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.6rem;color:#c4bdb4;margin-top:0.6rem;text-align:right" data-ja="残り16社の閲覧は登録後に可能です（デモデータ）" data-en="16 more buyers visible after registration (demo data)">残り16社の閲覧は登録後に可能です（デモデータ）</p>
+  </div>
+
+  <!-- PIPELINE -->
+  <div class="panel" id="p-pipeline">
+    <div class="filter-bar">
+      <span class="f-label" data-ja="フェーズ：" data-en="Phase:">フェーズ：</span>
+      <select class="f-select">
+        <option data-ja="すべて" data-en="All">すべて</option>
+        <option data-ja="初期接触" data-en="Initial Contact">初期接触</option>
+        <option data-ja="条件交渉" data-en="Negotiation">条件交渉</option>
+        <option data-ja="DD実施中" data-en="Due Diligence">DD実施中</option>
+        <option data-ja="最終条件調整" data-en="Final Terms">最終条件調整</option>
+      </select>
+      <span class="f-total" data-ja="進行中ディール｜12件中 6件を表示" data-en="Active deals — showing 6 of 12">進行中ディール｜12件中 6件を表示</span>
+    </div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-ja="売り手" data-en="Seller">売り手</th>
+          <th data-ja="バイヤー" data-en="Buyer">バイヤー</th>
+          <th data-ja="業種" data-en="Sector">業種</th>
+          <th>EV</th>
+          <th data-ja="フェーズ" data-en="Phase">フェーズ</th>
+          <th data-ja="開始" data-en="Started">開始</th>
+          <th data-ja="進捗" data-en="Progress">進捗</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rn">D01</td><td class="co">Shinshu Precision Parts</td><td>Tata Industrial Ventures 🇮🇳</td><td><span class="badge badge-ind">Mfg.</span></td><td class="ev">¥2.0B</td><td><span class="status"><span class="dot-s a"></span><span data-ja="最終条件調整" data-en="Final Terms">最終条件調整</span></span></td><td>2026.01</td><td><div class="pbar-wrap"><div class="pbar" style="width:85%"></div></div></td></tr>
+        <tr><td class="rn">D02</td><td class="co">Hokkaido Grand Foods</td><td>Pearl River Holdings 🇭🇰</td><td><span class="badge badge-food">Food</span></td><td class="ev">¥1.2B</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD実施中" data-en="Due Diligence">DD実施中</span></span></td><td>2026.02</td><td><div class="pbar-wrap"><div class="pbar" style="width:60%"></div></div></td></tr>
+        <tr><td class="rn">D03</td><td class="co">Kyushu Medical Services</td><td>Lion City Healthcare 🇸🇬</td><td><span class="badge badge-hc">Health</span></td><td class="ev">¥1.5B</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD実施中" data-en="Due Diligence">DD実施中</span></span></td><td>2026.02</td><td><div class="pbar-wrap"><div class="pbar" style="width:55%"></div></div></td></tr>
+        <tr><td class="rn">D04</td><td class="co">Metro Care Services</td><td>Meridian Capital 🇸🇬</td><td><span class="badge badge-svc">Services</span></td><td class="ev">¥900M</td><td><span class="status"><span class="dot-s b"></span><span data-ja="DD実施中" data-en="Due Diligence">DD実施中</span></span></td><td>2026.03</td><td><div class="pbar-wrap"><div class="pbar" style="width:45%"></div></div></td></tr>
+        <tr><td class="rn">D05</td><td class="co">Michinoku Agri Machinery</td><td>Rajasthan Agri Tech 🇮🇳</td><td><span class="badge badge-ind">Mfg.</span></td><td class="ev">¥550M</td><td><span class="status"><span class="dot-s a"></span><span data-ja="条件交渉" data-en="Negotiation">条件交渉</span></span></td><td>2026.03</td><td><div class="pbar-wrap"><div class="pbar" style="width:70%"></div></div></td></tr>
+        <tr><td class="rn">D06</td><td class="co">Sanyo Logistics Co.</td><td>Gulf Bridge Capital 🇦🇪</td><td><span class="badge badge-dist">Logistics</span></td><td class="ev">¥800M</td><td><span class="status"><span class="dot-s g"></span><span data-ja="初期接触" data-en="Initial Contact">初期接触</span></span></td><td>2026.04</td><td><div class="pbar-wrap"><div class="pbar" style="width:20%"></div></div></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.6rem;color:#c4bdb4;margin-top:0.6rem;text-align:right" data-ja="残り6件の閲覧は登録後に可能です（デモデータ）" data-en="6 more deals visible after registration (demo data)">残り6件の閲覧は登録後に可能です（デモデータ）</p>
+  </div>
+
+  <!-- INTEL -->
+  <div class="panel" id="p-intel">
+    <div class="intel-grid">
+      <div class="intel-card">
+        <div class="intel-num">¥158</div>
+        <h4 data-ja="円安による割安感" data-en="Yen Weakness = Buying Opportunity">円安による割安感</h4>
+        <p data-ja="現在の為替レートは¥158/$1。2020年比で日本企業を約33%割安に取得可能。インド・UAE・香港のバイヤーにとって過去最高の好条件です。" data-en="At ¥158/$1, Japanese companies are ~33% cheaper than in 2020. For buyers in India, UAE, and Hong Kong, this is a historically attractive entry point.">現在の為替レートは¥158/$1。2020年比で日本企業を約33%割安に取得可能。インド・UAE・香港のバイヤーにとって過去最高の好条件です。</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-num">650K</div>
+        <h4 data-ja="後継者不在の中小企業" data-en="SMEs Without Successors">後継者不在の中小企業</h4>
+        <p data-ja="2025年までに後継者未定の中小企業は約65万社に上ると試算。M&Aは事業承継の最重要オプションとして政策的に推進されています。" data-en="An estimated 650,000 Japanese SMEs face succession risk by 2025. M&A has become the government's primary recommended succession solution.">2025年までに後継者未定の中小企業は約65万社に上ると試算。M&Aは事業承継の最重要オプションとして政策的に推進されています。</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-num">4–6x</div>
+        <h4 data-ja="典型的EBITDAマルチプル" data-en="Typical EBITDA Multiple">典型的EBITDAマルチプル</h4>
+        <p data-ja="日本中小企業の一般的な売却倍率はEBITDA 4〜6倍。海外戦略バイヤーは技術・顧客基盤へのプレミアムとして最大8倍を許容するケースもあります。" data-en="Japanese SME deals typically price at 4–6x EBITDA. Strategic foreign buyers willing to pay a premium for technology or customer bases may accept up to 8x.">日本中小企業の一般的な売却倍率はEBITDA 4〜6倍。海外戦略バイヤーは技術・顧客基盤へのプレミアムとして最大8倍を許容するケースもあります。</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-num">2026</div>
+        <h4 data-ja="M&A仲介業 資格制度創設" data-en="New M&A Adviser Certification">M&A仲介業 資格制度創設</h4>
+        <p data-ja="中小企業庁は2026年度にM&Aアドバイザー資格制度を創設予定。財務・法務・倫理の知識が問われ、業界の信頼性向上が期待されます。" data-en="Japan's SME Agency plans to introduce an M&A adviser certification in FY2026, covering finance, law, and ethics — raising the professionalism bar for the industry.">中小企業庁は2026年度にM&Aアドバイザー資格制度を創設予定。財務・法務・倫理の知識が問われ、業界の信頼性向上が期待されます。</p>
+      </div>
+      <div class="intel-card" style="border-color:var(--gold);background:var(--gold-bg)">
+        <div class="intel-num" style="color:var(--rust)">Buffett</div>
+        <h4 style="color:var(--rust)" data-ja="Stewardship哲学" data-en="The Stewardship Philosophy">Stewardship哲学</h4>
+        <p data-ja="Warren Buffettは「価格より誰に継がせるか」を重視し、のれんと雇用を守る買い手を選んだ。Monはこの哲学を海外バイヤー選定の中心に置きます。" data-en="Warren Buffett consistently chose buyers based on their commitment to preserving people and culture — not just price. Mon places this same standard at the center of every match.">Warren Buffettは「価格より誰に継がせるか」を重視し、のれんと雇用を守る買い手を選んだ。Monはこの哲学を海外バイヤー選定の中心に置きます。</p>
+      </div>
+      <div class="intel-card">
+        <div class="intel-num">3</div>
+        <h4 data-ja="多言語クロスボーダー対応" data-en="Trilingual Cross-Border Support">多言語クロスボーダー対応</h4>
+        <p data-ja="日本語・英語・中国語での交渉・DD・契約対応が可能。インド系・中華系バイヤーとの直接コミュニケーションにより、情報損失なきマッチングを実現します。" data-en="Full deal support in Japanese, English, and Mandarin — from negotiation through signing. Direct communication with Asian buyers eliminates information loss.">日本語・英語・中国語での交渉・DD・契約対応が可能。インド系・中華系バイヤーとの直接コミュニケーションにより、情報損失なきマッチングを実現します。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM STATS -->
+  <div class="bottom-stats">
+    <div class="bstat">
+      <div class="bstat-label" data-ja="売却希望企業" data-en="Seller Companies">売却希望企業</div>
+      <div class="bstat-n">38<span class="u" data-ja="社" data-en="cos">社</span></div>
+      <div class="bstat-sub" data-ja="38社中 38社を表示" data-en="All 38 listed">38社中 38社を表示</div>
+    </div>
+    <div class="bstat">
+      <div class="bstat-label" data-ja="登録バイヤー" data-en="Registered Buyers">登録バイヤー</div>
+      <div class="bstat-n">24<span class="u" data-ja="社" data-en="cos">社</span></div>
+      <div class="bstat-sub">India · SG · HK · UAE · Taiwan</div>
+    </div>
+    <div class="bstat">
+      <div class="bstat-label" data-ja="進行中ディール" data-en="Active Deals">進行中ディール</div>
+      <div class="bstat-n">12<span class="u" data-ja="件" data-en="deals">件</span></div>
+      <div class="bstat-sub" data-ja="総額 EV ¥87億相当" data-en="Total EV approx. ¥8.7B">総額 EV ¥87億相当</div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<footer>
+  <div class="footer-in">
+    <p class="footer-left" data-ja="© 2026 Mon · YENS Capital LLC · 京都府在住 · 情報はデモ目的であり投資助言ではありません" data-en="© 2026 Mon · YENS Capital LLC · Kyoto, Japan · For demonstration purposes only. Not investment advice.">© 2026 Mon · YENS Capital LLC · 京都府在住 · 情報はデモ目的であり投資助言ではありません</p>
+    <p class="footer-right">"We are looking for businesses where the sellers care about more than just the price." — Warren Buffett</p>
+  </div>
+</footer>
+
+<script>
+  // ── TAB SWITCHING ──
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => {
+    t.addEventListener('click', function() {
+      tabs.forEach(x => x.classList.remove('on'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+      this.classList.add('on');
+      document.getElementById('p-' + this.dataset.p).classList.add('on');
+    });
+  });
+
+  // ── LANGUAGE SWITCHING ──
+  let currentLang = 'ja';
+
+  function setLang(lang) {
+    currentLang = lang;
+
+    // Update active button style
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+    // Update all elements with data-ja / data-en
+    document.querySelectorAll('[data-ja]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val !== null) el.innerHTML = val;
+    });
+
+    // Update tab button text (keep count badge)
+    tabs.forEach(t => {
+      const label = t.getAttribute('data-' + lang);
+      if (label) {
+        const badge = t.querySelector('.tab-count');
+        t.textContent = label + ' ';
+        if (badge) t.appendChild(badge);
+      }
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+  }
+</script>
+</body>
+</html>
