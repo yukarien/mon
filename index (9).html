@@ -413,7 +413,63 @@
   </div>
 
 </div><!-- /main -->
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" style="background:#fff;border-top:0.5px solid var(--border);padding:60px 24px;text-align:center">
+  <div style="max-width:560px;margin:0 auto">
+    <h2 style="font-size:1.4rem;font-weight:600;color:var(--text);margin-bottom:8px">
+      お問い合わせ / Contact
+    </h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:32px;line-height:1.7">
+      売却・買収のご相談、バイヤー登録はこちらから。<br>
+      For inquiries on listings, acquisitions, or advisory services.
+    </p>
 
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+      style="display:flex;flex-direction:column;gap:12px;text-align:left">
+
+      <!-- Web3Formsのアクセスキー。自分のキーに差し替えてください -->
+      <input type="hidden" name="access_key" value="ここにアクセスキーを貼り付け">
+      <!-- CC先（iCloudアドレスにも転送） -->
+      <input type="hidden" name="cc" value="mamachan11290@icloud.com">
+      <input type="hidden" name="subject" value="[Mon] お問い合わせ">
+      <input type="hidden" name="redirect" value="https://mon-ecru.vercel.app/?sent=1">
+      <input type="checkbox" name="botcheck" style="display:none">
+
+      <input type="text" name="name" placeholder="お名前 / Name" required
+        style="padding:12px 14px;border-radius:var(--r);border:0.5px solid var(--border2);font-family:inherit;font-size:13px;color:var(--text);background:var(--bg2);outline:none">
+
+      <input type="email" name="email" placeholder="メールアドレス / Email" required
+        style="padding:12px 14px;border-radius:var(--r);border:0.5px solid var(--border2);font-family:inherit;font-size:13px;color:var(--text);background:var(--bg2);outline:none">
+
+      <select name="inquiry_type"
+        style="padding:12px 14px;border-radius:var(--r);border:0.5px solid var(--border2);font-family:inherit;font-size:13px;color:var(--text2);background:var(--bg2);outline:none">
+        <option value="">お問い合わせ種別 / Inquiry Type</option>
+        <option value="seller">売却希望 / Seller</option>
+        <option value="buyer">バイヤー登録 / Buyer Registration</option>
+        <option value="advisory">アドバイザリー相談 / Advisory</option>
+        <option value="other">その他 / Other</option>
+      </select>
+
+      <textarea name="message" placeholder="メッセージ / Message" rows="4" required
+        style="padding:12px 14px;border-radius:var(--r);border:0.5px solid var(--border2);font-family:inherit;font-size:13px;color:var(--text);background:var(--bg2);outline:none;resize:vertical"></textarea>
+
+      <button type="submit"
+        style="padding:13px;background:var(--text);color:var(--bg);border:none;border-radius:var(--r);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">
+        送信する / Send
+      </button>
+    </form>
+
+    <!-- 直接メールリンク -->
+    <div style="margin-top:28px;padding-top:24px;border-top:0.5px solid var(--border)">
+      <p style="font-size:11px;color:var(--text3);margin-bottom:8px">または直接メールでも受け付けています</p>
+      <a href="mailto:endoyukari3@gmail.com?cc=mamachan11290@icloud.com&subject=[Mon] お問い合わせ"
+        style="font-size:13px;color:var(--text);font-weight:500;text-decoration:underline;text-underline-offset:3px">
+        endoyukari3@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ===== /CONTACT SECTION ===== -->
 <footer>
   <div class="footer-in">
     <p class="footer-left" data-ja="© 2026 Mon · YENS Capital LLC · 京都府在住 · 情報はデモ目的であり投資助言ではありません" data-en="© 2026 Mon · YENS Capital LLC · Kyoto, Japan · For demonstration purposes only. Not investment advice.">© 2026 Mon · YENS Capital LLC · 京都府在住 · 情報はデモ目的であり投資助言ではありません</p>
