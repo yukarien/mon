@@ -129,7 +129,36 @@
   .bstat-n .u { color: var(--gold); }
   .bstat-sub { font-size: 0.6rem; color: var(--ink-3); margin-top: 0.15rem; }
 
-  /* FOOTER */
+  <section id="contact" style="background:#f5f5f3;border-top:0.5px solid rgba(0,0,0,0.1);padding:60px 24px;text-align:center">
+  <div style="max-width:520px;margin:0 auto">
+    <h2 style="font-size:1.3rem;font-weight:600;margin-bottom:8px">お問い合わせ / Contact</h2>
+    <p style="font-size:13px;color:#6b6b67;margin-bottom:28px;line-height:1.7">
+      売却・買収のご相談、バイヤー登録はこちらから。<br>
+      For inquiries on listings, acquisitions, or advisory.
+    </p>
+    <form action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:10px;text-align:left">
+      <input type="hidden" name="access_key" value="ここにWeb3Formsのアクセスキーを貼る">
+      <input type="hidden" name="cc" value="mamachan11290@icloud.com">
+      <input type="hidden" name="subject" value="[Mon] お問い合わせ">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <input type="text" name="name" placeholder="お名前 / Name" required style="padding:11px 13px;border-radius:6px;border:1px solid rgba(0,0,0,0.15);font-size:13px;font-family:inherit">
+      <input type="email" name="email" placeholder="メールアドレス / Email" required style="padding:11px 13px;border-radius:6px;border:1px solid rgba(0,0,0,0.15);font-size:13px;font-family:inherit">
+      <select name="inquiry_type" style="padding:11px 13px;border-radius:6px;border:1px solid rgba(0,0,0,0.15);font-size:13px;font-family:inherit;color:#6b6b67;background:#fff">
+        <option value="">お問い合わせ種別 / Inquiry Type</option>
+        <option value="seller">売却希望 / Seller</option>
+        <option value="buyer">バイヤー登録 / Buyer</option>
+        <option value="advisory">アドバイザリー / Advisory</option>
+        <option value="other">その他 / Other</option>
+      </select>
+      <textarea name="message" placeholder="メッセージ / Message" rows="4" required style="padding:11px 13px;border-radius:6px;border:1px solid rgba(0,0,0,0.15);font-size:13px;font-family:inherit;resize:vertical"></textarea>
+      <button type="submit" style="padding:12px;background:#1a1a18;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">送信する / Send</button>
+    </form>
+    <p style="margin-top:20px;font-size:12px;color:#9b9b96">
+      または直接メール：
+      <a href="mailto:endoyukari3@gmail.com?cc=mamachan11290@icloud.com&subject=[Mon] お問い合わせ" style="color:#1a1a18">endoyukari3@gmail.com</a>
+    </p>
+  </div>
+</section>/* FOOTER */
   footer { border-top: 1px solid var(--border); padding: 0.9rem 1.75rem; background: var(--cream); }
   .footer-in { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
   .footer-left { font-size: 0.63rem; color: var(--ink-3); }
