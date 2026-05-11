@@ -142,7 +142,7 @@ footer { border-top: 1px solid var(--border); padding: 0.9rem 1.75rem; backgroun
 <h1 class="hero-h1">
 <span data-ja="後継者不在の日本企業を<br>" data-en="Connecting Japan's businesses<br>">後継者不在の日本企業を<br></span><em data-ja="海外の成長資本" data-en="with global growth capital">海外の成長資本</em><span data-ja="へ繋ぐ" data-en=""></span>
 </h1>
-<p class="hero-sub" data-ja="EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング" data-en="Specializing in deals with EV ¥500M–¥2B. Instant matching with strategic buyers in India, Singapore, Hong Kong & UAE. Intermediated by YENS Capital LLC.">EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング。</p>
+<p class="hero-sub" data-ja="EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング" data-en="Specializing in deals with EV $3M–$13M. Instant matching with strategic buyers in India, Singapore, Hong Kong & UAE. Intermediated by YENS Capital LLC.">EV ¥5億〜¥20億の小型案件に特化。インド・シンガポール・香港・UAEの戦略的バイヤーと即時マッチング。</p>
 <div class="stats-bar">
 <div class="stat-cell"><div class="stat-n">38</div><div class="stat-lbl" data-ja="売り手企業" data-en="Seller Companies">売り手企業</div></div>
 <div class="stat-cell"><div class="stat-n">24</div><div class="stat-lbl" data-ja="海外バイヤー" data-en="Global Buyers">海外バイヤー</div></div>
@@ -300,7 +300,7 @@ document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
 document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 document.querySelectorAll('[data-ja]').forEach(el => {
 const val = el.getAttribute('data-' + lang);
-if (val !== null) el.innerHTML = val;
+if (val !== null) el.innerHTML = va
 });
 tabs.forEach(t => {
 const label = t.getAttribute('data-' + lang);
@@ -311,9 +311,21 @@ if (badge) t.appendChild(badge);
 }
 });
 document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+if (lang === 'en') {
+  document.querySelectorAll('.num,.ev').forEach(el => {
+    el.setAttribute('data-jpy', el.getAttribute('data-jpy') || el.textContent);
+    el.textContent = el.textContent
+      .replace(/¥([\d.]+)B/g, (m,n) => '$'+Math.round(n*6.7)+'M')
+      .replace(/¥([\d.]+)M/g, (m,n) => '$'+Math.round(n/150*1000)+'K')
+      .replace(/¥(\d+)億/g, (m,n) => '$'+Math.round(n*100000000/150/1000000)+'M');
+  });
+} else {
+  document.querySelectorAll('.num,.ev').forEach(el => {
+    if (el.getAttribute('data-jpy')) el.textContent = el.getAttribute('data-jpy');
+  });
 }
-</script>
-
+}
+</script
 <script>
 const
 <section id="contact" style="background:var(--white);border-top:1px solid var(--border);padding:60px 24px;text-align:center">
