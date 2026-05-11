@@ -311,6 +311,7 @@ if (badge) t.appendChild(badge);
 }
 });
 document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+  if(lang==='en'){document.querySelectorAll('.num,.ev').forEach(el=>{el.setAttribute('data-jpy',el.getAttribute('data-jpy')||el.textContent);el.textContent=el.textContent.replace(/¥([\d.]+)B/g,(m,n)=>'$'+Math.round(n*6.7)+'M').replace(/¥([\d.]+)M/g,(m,n)=>'$'+Math.round(n/150*1000)+'K');});}else{document.querySelectorAll('.num,.ev').forEach(el=>{if(el.getAttribute('data-jpy'))el.textContent=el.getAttribute('data-jpy');});}
 if (lang === 'en') {
   document.querySelectorAll('.num,.ev').forEach(el => {
     el.setAttribute('data-jpy', el.getAttribute('data-jpy') || el.textContent);
